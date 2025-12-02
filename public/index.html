@@ -363,11 +363,31 @@
     box-shadow: 3px 3px 0 0 var(--shadow);
   }
 
-  .dog-scene{
+  .xmas-game{
+    flex: 0 0 630px; 
+    width: 630px; 
+    max-width: 100%; 
+  }
+
+  .xmas-textarea{
+    width: 100%;
+    height: 50px;
+  }
+
+  .xmas-scene{
   display: flex;
   }
 
-  .dog-text{
+  .xmas-text{
+    flex: 1 1 auto;
+    min-width: 0; 
+  }
+
+  .game-scene{
+  display: flex;
+  }
+
+  .game-text{
     padding: 20px;
   }
 
@@ -583,15 +603,31 @@
           <div class="card">
             <p>hello! welcome to my tiny pastel corner of the web. As you can probably tell, I really miss the early internet days of Geocities, MySpace, Neopets etc etc. I have tried
               to create that here, in my own small dedicated space. 🌙🍵</p>
-            <p>I have recently taken up the hobby of game development. I say recently, last year I tried to make a full sized game that featured a number of hobbies of mine and 
-              I suffered from classic game development issues including feature creep, general ever widening scope and I eventually became so overwhelmed doing it all myself
-              that I completely dropped the game. I have since seen the advice shared over and over again that you should start by making <em>small</em> games. Start small with
-              features that you want in your final game and slowly increase from there. So that's what I've done. I know that any game I make will inevitably have a pet, so I 
-              made that my priority for my first game. See below and also <a href="https://ginacities.itch.io/give-a-dog-a-home">my Itch page</a> if you'd like your own doggy.
+            <p>I have recently taken up the hobby of game development. I am a developer for most of the day so this hasn't been a gigantic leap but still there has been a learning curve.
+              I am trying to follow the advice shared over and over again in the game dev world that you should start by making <em>small</em> games, you should not, as I initially tried, to start with 
+              your Magnum Opus as you will get overwhelmed and burn out. Since doing this I've been having a lot of fun and it has also been very rewarding. 
+              Please see below and also <a href="https://ginacities.itch.io" target="_blank">my Itch page</a> to view my games.
             </p>
           </div>
         </div>
       </section>
+
+        <section class="window lacey floral">
+        <div class="titlebar">
+          <svg class="icon pixel" aria-hidden="true"><use href="#i-person"/></svg>
+          <span>A Little Christmas Market</span>
+          <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </div>
+        <div class="xmas-scene">
+          <iframe class="xmas-game" frameborder="0" src="https://itch.io/embed-upload/15720343?color=a0c6c7" allowfullscreen="" width="630" height="648"><a href="https://ginacities.itch.io/a-little-christmas-market">Play A Little Christmas Market on itch.io</a></iframe>
+          <div class="xmas-text content">
+            <p>Welcome to A Little Christmas Market!</p>
+            <p>Would you like to embed this game onto your page? Use this code:</p>
+            <textarea class="xmas-textarea"><iframe frameborder="0" src="https://itch.io/embed-upload/15720343?color=a0c6c7" allowfullscreen="" width="630" height="648"><a href="https://ginacities.itch.io/a-little-christmas-market">Play A Little Christmas Market on itch.io</a></iframe></textarea>
+            <p>Learn more about this game <a href="https://ginacities.itch.io/a-little-christmas-market" target="_blank">here</a> on Itch.</p>
+          </div>
+        </div>
+        </section>
 
       <section class="window lacey floral">
         <div class="titlebar">
@@ -599,9 +635,9 @@
           <span>My pet doggy</span>
           <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
-        <div class="dog-scene">
+        <div class="game-scene">
           <iframe id="dogIframe" src="https://ginacities.com/doggy/?embed=1&dog=mini_poodle&variant=1&room=cute" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>
-          <div class="dog-text content">
+          <div class="game-text content">
             <p>I did it! I finally made my first game in Godot, it's a very simple ambient doggy that wanders around, sits down, sleeps and entertains itself.</p>
             <p>The doggy will just happily live on your page, you can click on them for love, and their food and water can run out, you can click it to top it up, but no harm will ever come to them.</p>
             <p>If you'd like your own doggy then click the cog in the top right, go back to the menu and select your own dog and room of choice. Then come back to the cog and embed them using the code onto your own page.</p>
@@ -609,6 +645,7 @@
           </div>
         </div>
         </section>
+
         <section class="window lacey floral">
           <div class="titlebar">
           <svg class="icon pixel" aria-hidden="true"><use href="#i-person"/></svg>
@@ -627,6 +664,7 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
           </div>
         </div>
         </section>
+
 
         <section id="devlog" class="window">
           <div class="titlebar">
@@ -737,107 +775,114 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
   }
 // --- falling stars/flowers end --- //
 // ---------- dark mode start ---------- //
-(function(){
-    const root  = document.documentElement;
-    const btn   = document.getElementById('modeToggle');
-    
-      const label = document.getElementById('modeLabel');
-      const dogIframe = document.getElementById('dogIframe');
+(function () {
+  const root  = document.documentElement;
+  const btn   = document.getElementById('modeToggle');
+  const label = document.getElementById('modeLabel');
+  const dogIframe = document.getElementById('dogIframe');
 
-      const LIGHT_DOG_URL = 'https://ginacities.com/doggy/?embed=1&dog=mini_poodle&variant=1&room=cute';
-      const DARK_DOG_URL  = 'https://ginacities.com/doggy/?embed=1&dog=corgi&variant=3&room=goth';
+  const LIGHT_DOG_URL = 'https://ginacities.com/doggy/?embed=1&dog=mini_poodle&variant=1&room=cute';
+  const DARK_DOG_URL  = 'https://ginacities.com/doggy/?embed=1&dog=corgi&variant=3&room=goth';
 
-      const LIGHT_BG_SIZE = 'contain';  
-      const DARK_BG_SIZE  = 'cover';
+  const LIGHT_BG_SIZE = 'contain';  
+  const DARK_BG_SIZE  = 'cover';
 
-      const LIGHT_TITLEBAR = '#dec2ee';
-      const DARK_TITLEBAR  = '#7964a7';
+  const LIGHT_TITLEBAR = '#dec2ee';
+  const DARK_TITLEBAR  = '#7964a7';
 
-      const LIGHT_WINDOW_BG = "#ffffff";
-      const DARK_WINDOW_BG = "#5a5493";
-      const LIGHT_WINDOW_COL = "#000000";
-      const DARK_WINDOW_COL = "#ffffff"
+  const LIGHT_WINDOW_BG = "#ffffff";
+  const DARK_WINDOW_BG  = "#5a5493";
+  const LIGHT_WINDOW_COL = "#000000";
+  const DARK_WINDOW_COL  = "#ffffff";
 
-      function setTitle(bg_col, font_col){
-        const title = document.getElementById('logo');
-        logo.style.backgroundColor = bg_col;
-        logo.style.color = font_col
-      }
+  function setTitle(bg_col, font_col){
+    const title = document.getElementById('logo');
+    if (!title) return;
+    title.style.backgroundColor = bg_col;
+    title.style.color = font_col;
+  }
 
-      function setBackgroundSize(value){
-        document.body.style.backgroundSize = value;
-      }
+  function setBackgroundSize(value){
+    document.body.style.backgroundSize = value;
+  }
 
-      function setLinks(baseColor, hoverColor) {
-        if (baseColor) root.style.setProperty('--link', baseColor);
-        if (hoverColor) root.style.setProperty('--link-hover', hoverColor);
-      }
-      function setDogUrl(url){
-        if (dogIframe && url) dogIframe.src = url;
-      }
+  function setLinks(baseColor, hoverColor) {
+    if (baseColor) root.style.setProperty('--link', baseColor);
+    if (hoverColor) root.style.setProperty('--link-hover', hoverColor);
+  }
 
-      function setTitlebarColor(color){
-        document.querySelectorAll('.titlebar').forEach(el => {
-          el.style.backgroundColor = color;
-        });
-      }
+  function setDogUrl(url){
+    if (dogIframe && url) dogIframe.src = url;
+  }
 
-      function setWindowColor(bg_col, font_col){
-        document.querySelectorAll('.content').forEach(el => {
-          el.style.backgroundColor = bg_col;
-          el.style.color = font_col
-        });
-      }
+  function setTitlebarColor(color){
+    document.querySelectorAll('.titlebar').forEach(el => {
+      el.style.backgroundColor = color;
+    });
+  }
 
-      function setInnerWindow(colour){
-        document.querySelectorAll('.card').forEach(el => {
-          el.style.backgroundColor = colour;
-        })
-      }
+  function setWindowColor(bg_col, font_col){
+    document.querySelectorAll('.content').forEach(el => {
+      el.style.backgroundColor = bg_col;
+      el.style.color = font_col;
+    });
+  }
 
-      function setFooterBg(colour){
-      const footer = document.getElementById('badges');
-      footer.style.backgroundColor = colour
-      }
+  function setInnerWindow(colour){
+    document.querySelectorAll('.card').forEach(el => {
+      el.style.backgroundColor = colour;
+    });
+  }
 
-      function applyTheme(theme){
-        if (theme === 'dark') {
-          root.setAttribute('data-theme','dark');
-          label.textContent = 'light mode';
-          btn.setAttribute('aria-label','switch to light mode');
-          btn.style.backgroundColor = DARK_WINDOW_BG;
-          btn.style.color = DARK_WINDOW_COL;
+  function setFooterBg(colour){
+    const footer = document.getElementById('badges');
+    if (footer) footer.style.backgroundColor = colour;
+  }
 
-          setLinks(LIGHT_TITLEBAR, DARK_WINDOW_COL)
-          setBackgroundSize(DARK_BG_SIZE);
-          setDogUrl(DARK_DOG_URL);
-          setTitlebarColor(DARK_TITLEBAR);
-          setWindowColor(DARK_WINDOW_BG, DARK_WINDOW_COL);
-          setInnerWindow(DARK_WINDOW_BG);
-          setFooterBg(DARK_WINDOW_BG);
-          setTitle(DARK_WINDOW_BG, DARK_WINDOW_COL)
-        } else {
-          root.removeAttribute('data-theme'); 
-          label.textContent = 'dark mode';
-          btn.setAttribute('aria-label','switch to dark mode');
-          btn.style.backgroundColor = LIGHT_TITLEBAR;
-          btn.style.color = LIGHT_WINDOW_COL;
+  function applyTheme(theme){
+    if (theme === 'dark') {
+      root.setAttribute('data-theme','dark');
+      label.textContent = 'light mode';
+      btn.setAttribute('aria-label','switch to light mode');
+      btn.style.backgroundColor = DARK_WINDOW_BG;
+      btn.style.color = DARK_WINDOW_COL;
 
-          setLinks(LIGHT_WINDOW_COL, DARK_TITLEBAR)
-          setBackgroundSize(LIGHT_BG_SIZE);
-          setDogUrl(LIGHT_DOG_URL);
-          setTitlebarColor(LIGHT_TITLEBAR);
-          setWindowColor(LIGHT_WINDOW_BG, LIGHT_WINDOW_COL);
-          setInnerWindow(LIGHT_WINDOW_BG);
-          setFooterBg(LIGHT_WINDOW_BG);
-          setTitle(LIGHT_WINDOW_BG, LIGHT_WINDOW_COL)
-        }
-      }
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-      });
-  })();
-  /* ---------- dark mode end ---------- */
+      setLinks(LIGHT_TITLEBAR, DARK_WINDOW_COL);
+      setBackgroundSize(DARK_BG_SIZE);
+      setDogUrl(DARK_DOG_URL);
+      setTitlebarColor(DARK_TITLEBAR);
+      setWindowColor(DARK_WINDOW_BG, DARK_WINDOW_COL);
+      setInnerWindow(DARK_WINDOW_BG);
+      setFooterBg(DARK_WINDOW_BG);
+      setTitle(DARK_WINDOW_BG, DARK_WINDOW_COL);
+    } else {
+      root.removeAttribute('data-theme');
+      label.textContent = 'dark mode';
+      btn.setAttribute('aria-label','switch to dark mode');
+      btn.style.backgroundColor = LIGHT_TITLEBAR;
+      btn.style.color = LIGHT_WINDOW_COL;
+
+      setLinks(LIGHT_WINDOW_COL, DARK_TITLEBAR);
+      setBackgroundSize(LIGHT_BG_SIZE);
+      setDogUrl(LIGHT_DOG_URL);
+      setTitlebarColor(LIGHT_TITLEBAR);
+      setWindowColor(LIGHT_WINDOW_BG, LIGHT_WINDOW_COL);
+      setInnerWindow(LIGHT_WINDOW_BG);
+      setFooterBg(LIGHT_WINDOW_BG);
+      setTitle(LIGHT_WINDOW_BG, LIGHT_WINDOW_COL);
+    }
+  }
+
+  // initial state (light by default)
+  applyTheme('light');
+
+  // toggle on click
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+})();
+// ---------- dark mode end ---------- //
 
   /* ---------- Music player start ---------- */
 
