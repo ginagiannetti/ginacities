@@ -1,0 +1,11 @@
+# macOS junk
+.DS_Store
+**/.DS_Store
+
+# Node / build artefacts (safe for Vite / frontend sites)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
