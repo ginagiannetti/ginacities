@@ -296,7 +296,7 @@
 </head>
 
 <body>
-  <button id="modeToggle" class="btn toggle" type="button" aria-label="toggle dark mode">
+  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" data-umami-event-location="404" id="modeToggle" class="btn toggle" type="button" aria-label="toggle dark mode">
     🌙 <span id="modeLabel">dark mode</span>
   </button>
   <div class="stars" id="stars"></div>
@@ -328,12 +328,12 @@
             <p class="tiny" id="dogMeta">Loading doggy…</p>
 
             <div class="actions">
-              <a class="pill" id="randomDogBtn" type="button">🎲 random dog</a>
-              <a class="pill" href="https://ginacities.itch.io" target="_blank" rel="noreferrer">🎮 games</a>
+              <a data-umami-event="Clicked Random Dog"  data-umami-event-location="GinaCities 404" class="pill" id="randomDogBtn" type="button">🎲 random dog</a>
+              <a data-umami-event="Clicked Itch.io"  data-umami-event-location="GinaCities 404" class="pill" href="https://ginacities.itch.io" target="_blank" rel="noreferrer">🎮 games</a>
             </div>
 
             <div class="badge-row" aria-label="buttons">
-              <a href="https://ginacities.com" target="_blank" rel="noreferrer">
+              <a data-umami-event="Clicked GinaCities.com"  data-umami-event-location="GinaCities 404" href="https://ginacities.com" target="_blank" rel="noreferrer">
                 <img src="https://ginacities.com/assets/banners/GinaCities.gif" alt="GinaCities banner" loading="lazy" width="88" height="30">
               </a>
             </div>

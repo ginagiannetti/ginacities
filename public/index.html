@@ -478,7 +478,7 @@
 </style>
 </head>
 <body>
-  <button id="modeToggle" class="mode-toggle" type="button" aria-label="toggle dark mode">
+  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" data-umami-event-location="Homepage" class="btn" id="modeToggle" class="mode-toggle" type="button" aria-label="toggle dark mode">
   <svg class="icon pixel" aria-hidden="true"><use href="#i-moon"/></svg>
   <span id="modeLabel">dark mode</span>
 </button>
@@ -524,10 +524,10 @@
             <div>
             <strong>Now Playing:</strong> <em id="trackTitle">—</em><br/>
             <div class="buttons-row" style="margin-top:8px">
-                <button class="btn" id="prevBtn" type="button" aria-label="previous track">⏮</button>
-                <button class="btn" id="playBtn" type="button" aria-label="play/pause">▶</button>
-                <button class="btn" id="nextBtn" type="button" aria-label="next track">⏭</button>
-                <button class="btn" id="loopBtn" type="button" aria-label="toggle loop">🔁</button>
+                <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Prev" class="btn" class="btn" id="prevBtn" type="button" aria-label="previous track">⏮</button>
+                <button data-umami-event="Clicked GinaCities Music Player"  data-umami-event-type="Play/Pause" class="btn" id="playBtn" type="button" aria-label="play/pause">▶</button>
+                <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Next" class="btn" class="btn" id="nextBtn" type="button" aria-label="next track">⏭</button>
+                <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Loop" class="btn" class="btn" id="loopBtn" type="button" aria-label="toggle loop">🔁</button>
             </div>
 
             <div class="progress" id="progress" aria-label="timeline" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
@@ -553,12 +553,12 @@
           <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
         <div class="content buttons-row">
-          <a href="https://lemontchi.neocities.org/home" target="_blank"><img src="https://lemontchi.neocities.org/lemontchibutton.gif"></a>
-          <a class="pill" href="https://dirtstarr.neocities.org/" target="_blank">dirtstarr</a>
-          <a href="https://breadavota.cafe/bakery/#fidough" target="_blank"><img src="https://breadavota.cafe/art/breadavotabutton.gif" alt="An 88 by 31 button that says breadavota.cafe"></a>
-          <a class="pill" href="https://eberlins.neocities.org/" target="_blank">eberlinks</a>
-          <a class="pill" href="https://eggtuna.neocities.org/" target="_blank">eggtuna</a>
-          <a href="https://samsolarsystem.neocities.org/Virtualpets" target="_blank"><img src="https://i.postimg.cc/ryR8xhT2/ezgif-3b612a7c176c21-1.gif"></a>
+          <a data-umami-event="Clicked Lemontchi"  data-umami-event-location="GinaCities Dog Section" href="https://lemontchi.neocities.org/home" target="_blank"><img src="https://lemontchi.neocities.org/lemontchibutton.gif"></a>
+          <a data-umami-event="Clicked dirtstarr"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://dirtstarr.neocities.org/" target="_blank">dirtstarr</a>
+          <a data-umami-event="Clicked breadavota"  data-umami-event-location="GinaCities Dog Section" href="https://breadavota.cafe/bakery/#fidough" target="_blank"><img src="https://breadavota.cafe/art/breadavotabutton.gif" alt="An 88 by 31 button that says breadavota.cafe"></a>
+          <a data-umami-event="Clicked eberlins"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eberlins.neocities.org/" target="_blank">eberlinks</a>
+          <a data-umami-event="Clicked eggtuna"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eggtuna.neocities.org/" target="_blank">eggtuna</a>
+          <a data-umami-event="Clicked samsolarsystem"  data-umami-event-location="GinaCities Dog Section" href="https://samsolarsystem.neocities.org/Virtualpets" target="_blank"><img src="https://i.postimg.cc/ryR8xhT2/ezgif-3b612a7c176c21-1.gif"></a>
           <div>If you've embedded a doggy on your page or find one I've missed please <a href="mailto:gina@ginacities.com" aria-label="mail">email me!</a></div>
         </div>
       </section>
@@ -583,13 +583,13 @@
         </div>
         <div class="content buttons-row">
           
-          <a class="pill" target="_blank" href="https://ginacities.itch.io" aria-label="itch">itch.io</a>
-          <a class="pill" target="_blank" href="https://bsky.app/profile/ginacities.com" aria-label="Bluesky">Bluesky</a>
-          <a class="pill" target="_blank" href="https://www.tiktok.com/@ginacities" aria-label="TikTok">TikTok</a>
-          <a class="pill" target="_blank" href="https://www.youtube.com/@ginacities" aria-label="YouTube">YouTube</a>
-          <a class="pill" target="_blank" href="https://www.instagram.com/ginacities/" aria-label="Instagram">Instagram</a>
-          <a class="pill" target="_blank" href="https://neocities.org/site/ginacities" aria-label="threads">Follow me on Neocities</a>
-          <a class="pill" target="_blank" href="mailto:gina@ginacities.com" aria-label="email">gina@ginacities.com</a>
+          <a class="pill" data-umami-event="Clicked Itch.io"  data-umami-event-location="GinaCities Social Section" target="_blank" href="https://ginacities.itch.io" aria-label="itch">itch.io</a>
+          <a class="pill" data-umami-event="Clicked Bluesky" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://bsky.app/profile/ginacities.com" aria-label="Bluesky">Bluesky</a>
+          <a class="pill" data-umami-event="Clicked TikTok" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.tiktok.com/@ginacities" aria-label="TikTok">TikTok</a>
+          <a class="pill" data-umami-event="Clicked YouTube" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.youtube.com/@ginacities" aria-label="YouTube">YouTube</a>
+          <a class="pill" data-umami-event="Clicked Instagram" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.instagram.com/ginacities/" aria-label="Instagram">Instagram</a>
+          <a class="pill" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://neocities.org/site/ginacities" aria-label="threads">Follow me on Neocities</a>
+          <a class="pill" data-umami-event="Clicked Email" data-umami-event-location="GinaCities Social Section" target="_blank" href="mailto:gina@ginacities.com" aria-label="email">gina@ginacities.com</a>
         </div>
       </section>
     </aside>
@@ -608,7 +608,7 @@
             <p>hello! welcome to my tiny pastel corner of the web. As you can probably tell, I really miss the early internet days of Geocities, MySpace, Neopets etc etc. I have tried
               to create that here, in my own small dedicated space. 🌙🍵</p>
             <p>I have recently taken up the hobby of game development. I've been having a lot of fun and it has been very rewarding. 
-              Please see <a href="https://ginacities.itch.io" target="_blank">my Itch page</a> to view my games.
+              Please see <a href="https://ginacities.itch.io" data-umami-event="Clicked Itch.io" data-umami-event-platform="Itch.io" data-umami-event-location="GinaCities Hero Section" target="_blank">my Itch page</a> to view my games.
             </p>
           </div>
         </div>
@@ -686,9 +686,9 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
     <!-- FOOTER -->
     <footer class="site">
       <div id="badges" aria-label="88x31 button bar">
-        <a href="https://lovesick.cafe/grrrl" target="_blank"><img alt="Made by a girl" src="https://loves1ck.neocities.org/img/sozai/grrrl/madebya-04-1.png" loading="lazy" height="51" width="72"></a>
-        <a href="https://lemontchi.neocities.org" target="_blank"> <img src=https://lemontchi.neocities.org/lemontchibutton.gif loading="lazy" height="31" width="88"> </a>
-        <a href="https://neocities.org/site/ginacities" target="_blank"><img src="./assets/banners/neocities.gif" loading="lazy" height="31" width="88"></a>
+        <a href="https://lovesick.cafe/grrrl" data-umami-event="Clicked Made by a girl" data-umami-event-location="GinaCities Footer Section" target="_blank"><img alt="Made by a girl" src="https://loves1ck.neocities.org/img/sozai/grrrl/madebya-04-1.png" loading="lazy" height="51" width="72"></a>
+        <a href="https://lemontchi.neocities.org" target="_blank" data-umami-event="Clicked Lemontchi" data-umami-event-location="GinaCities Footer Section"> <img src=https://lemontchi.neocities.org/lemontchibutton.gif loading="lazy" height="31" width="88"> </a>
+        <a href="https://neocities.org/site/ginacities" target="_blank" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Footer Section"><img src="./assets/banners/neocities.gif" loading="lazy" height="31" width="88"></a>
       </div>
     </footer>
   </div>
