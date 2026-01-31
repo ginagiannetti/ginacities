@@ -138,10 +138,7 @@
 
   /* Light/dark mode button styling */
   .mode-toggle{
-    position: fixed;
-    left: 14px;
-    top: 14px;
-    z-index: 99;
+    margin: 10px;
     display: inline-flex; 
     align-items: center; 
     gap: 8px;
@@ -279,7 +276,7 @@
     font-family: "Press Start 2P", cursive;
     font-size: 12px;
     margin: 4px;
-    background-color:#dec2ee;
+    background-color:#7964a7;
   }
   .titlebar .icons{
     margin-left:auto; 
@@ -478,7 +475,7 @@
 </style>
 </head>
 <body>
-  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" data-umami-event-location="Homepage" class="btn" id="modeToggle" class="mode-toggle" type="button" aria-label="toggle dark mode">
+  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" data-umami-event-location="Homepage" class="btn mode-toggle" id="modeToggle" type="button" aria-label="toggle dark mode">
   <svg class="icon pixel" aria-hidden="true"><use href="#i-moon"/></svg>
   <span id="modeLabel">dark mode</span>
 </button>
@@ -549,19 +546,21 @@
       <section class="window">
         <div class="titlebar">
           <svg class="icon pixel" aria-hidden="true"><use href="#i-dog"/></svg>
-          <span>Featuring doggy</span>
+          <span>Sites featuring my doggy</span>
           <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
         <div class="content buttons-row">
-          <a data-umami-event="Clicked Lemontchi"  data-umami-event-location="GinaCities Dog Section" href="https://lemontchi.neocities.org/home" target="_blank"><img alt="lemontchi banner" src="https://lemontchi.neocities.org/lemontchibutton.gif"></a>
+          <a data-umami-event="Clicked Lemontchi"  data-umami-event-location="GinaCities Dog Section" href="https://lemontchi.neocities.org/home" target="_blank"><img alt="lemontchi banner" src="https://lemontchi.neocities.org/lemontchibutton.gif" loading="lazy" height="31" width="88"></a>
           <a data-umami-event="Clicked dirtstarr"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://dirtstarr.neocities.org/" target="_blank">dirtstarr</a>
-          <a data-umami-event="Clicked breadavota"  data-umami-event-location="GinaCities Dog Section" href="https://breadavota.cafe/bakery/#fidough" target="_blank"><img alt="breadavota banner" src="https://breadavota.cafe/art/breadavotabutton.gif" alt="An 88 by 31 button that says breadavota.cafe"></a>
+          <a data-umami-event="Clicked breadavota"  data-umami-event-location="GinaCities Dog Section" href="https://breadavota.cafe/bakery/#fidough" target="_blank"><img alt="breadavota banner" src="https://breadavota.cafe/art/breadavotabutton.gif" loading="lazy" height="31" width="88" alt="An 88 by 31 button that says breadavota.cafe"></a>
           <a data-umami-event="Clicked eberlins"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eberlins.neocities.org/" target="_blank">eberlinks</a>
           <a data-umami-event="Clicked eggtuna"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eggtuna.neocities.org/" target="_blank">eggtuna</a>
-          <a data-umami-event="Clicked samsolarsystem"  data-umami-event-location="GinaCities Dog Section" href="https://samsolarsystem.neocities.org/Virtualpets" target="_blank"><img alt="sams solar system banner" src="https://i.postimg.cc/ryR8xhT2/ezgif-3b612a7c176c21-1.gif"></a>
+          <a data-umami-event="Clicked samsolarsystem"  data-umami-event-location="GinaCities Dog Section" href="https://samsolarsystem.neocities.org/Virtualpets" target="_blank"><img alt="sams solar system banner" src="https://i.postimg.cc/ryR8xhT2/ezgif-3b612a7c176c21-1.gif" loading="lazy" height="31" width="88"></a>
           <a data-umami-event="Clicked ravenway" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://ravenway.neocities.org/" target="_blank">ravenway</a>
-          <a data-umami-event="Clicked aerith" data-umami-event-location="GinaCities Dog Section" href="https://aerith.me/" target="_blank"><img alt="aerith banner" src="./assets/banners/aerith.png"></a>
-          <div>If you've embedded a doggy on your page or find one I've missed please <a href="mailto:gina@ginacities.com" aria-label="mail">email me!</a></div>
+          <a data-umami-event="Clicked aerith" data-umami-event-location="GinaCities Dog Section" href="https://aerith.me/" target="_blank"><img alt="aerith banner" src="./assets/banners/aerith.png" loading="lazy" height="31" width="88"></a>
+          <a data-umami-event="Clicked whooami" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://whooami.neocities.org/" target="_blank">whooami</a>
+          <a data-umami-event="Clicked betapopsicle" data-umami-event-location="GinaCities Dog Section" href="https://betapopsicle.neocities.org/blog" target="_blank"><img alt="beta popsicle banner" src="./assets/banners/betapopsiclebutton_1.gif" loading="lazy" height="31" width="88"></a>
+          <a data-umami-event="Clicked dannydebito" data-umami-event-location="GinaCities Dog Section" href="https://dannydebito.nekoweb.org/" target="_blank"><img alt="danny debito banner" src="./assets/banners/dannydebito.jpg" loading="lazy" height="31" width="88"></a>
         </div>
       </section>
 
@@ -669,7 +668,6 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
         </div>
         </section>
 
-
         <section id="devlog" class="window">
           <div class="titlebar">
             <svg class="icon pixel" aria-hidden="true"><use href="#i-games"/></svg>
@@ -691,6 +689,7 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
         <a href="https://lovesick.cafe/grrrl" data-umami-event="Clicked Made by a girl" data-umami-event-location="GinaCities Footer Section" target="_blank"><img alt="Made by a girl" src="https://loves1ck.neocities.org/img/sozai/grrrl/madebya-04-1.png" loading="lazy" height="51" width="72"></a>
         <a href="https://lemontchi.neocities.org" target="_blank" data-umami-event="Clicked Lemontchi" data-umami-event-location="GinaCities Footer Section"> <img alt="lemontchi banner" src=https://lemontchi.neocities.org/lemontchibutton.gif loading="lazy" height="31" width="88"> </a>
         <a href="https://neocities.org/site/ginacities" target="_blank" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Footer Section"><img alt="neocities banner" src="./assets/banners/neocities.gif" loading="lazy" height="31" width="88"></a>
+        <a href='https://strawberry-transneu.neocities.org' target="_blank" data-umami-event="Clicked strawberry-transneu" data-umami-event-location="GinaCities Footer Section"><img src='https://strawberry-transneu.neocities.org/graphics/b_strw.png' loading="lazy" height="31" width="88"></a>
       </div>
     </footer>
   </div>
@@ -791,9 +790,8 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
   const LIGHT_BG_SIZE = 'contain';  
   const DARK_BG_SIZE  = 'cover';
 
-  const LIGHT_TITLEBAR = '#dec2ee';
-  const DARK_TITLEBAR  = '#7964a7';
-
+  const DARK_COL  = '#7964a7';
+  const LIGHT_COL = '#dec2ee';
   const LIGHT_WINDOW_BG = "#ffffff";
   const DARK_WINDOW_BG  = "#5a5493";
   const LIGHT_WINDOW_COL = "#000000";
@@ -817,12 +815,6 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
 
   function setDogUrl(url){
     if (dogIframe && url) dogIframe.src = url;
-  }
-
-  function setTitlebarColor(color){
-    document.querySelectorAll('.titlebar').forEach(el => {
-      el.style.backgroundColor = color;
-    });
   }
 
   function setWindowColor(bg_col, font_col){
@@ -851,10 +843,9 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
       btn.style.backgroundColor = DARK_WINDOW_BG;
       btn.style.color = DARK_WINDOW_COL;
 
-      setLinks(LIGHT_TITLEBAR, DARK_WINDOW_COL);
+      setLinks(LIGHT_COL, DARK_WINDOW_COL);
       setBackgroundSize(DARK_BG_SIZE);
       setDogUrl(DARK_DOG_URL);
-      setTitlebarColor(DARK_TITLEBAR);
       setWindowColor(DARK_WINDOW_BG, DARK_WINDOW_COL);
       setInnerWindow(DARK_WINDOW_BG);
       setFooterBg(DARK_WINDOW_BG);
@@ -863,13 +854,12 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
       root.removeAttribute('data-theme');
       label.textContent = 'dark mode';
       btn.setAttribute('aria-label','switch to dark mode');
-      btn.style.backgroundColor = LIGHT_TITLEBAR;
+      btn.style.backgroundColor = LIGHT_COL;
       btn.style.color = LIGHT_WINDOW_COL;
 
-      setLinks(LIGHT_WINDOW_COL, DARK_TITLEBAR);
+      setLinks(LIGHT_WINDOW_COL, DARK_COL);
       setBackgroundSize(LIGHT_BG_SIZE);
       setDogUrl(LIGHT_DOG_URL);
-      setTitlebarColor(LIGHT_TITLEBAR);
       setWindowColor(LIGHT_WINDOW_BG, LIGHT_WINDOW_COL);
       setInnerWindow(LIGHT_WINDOW_BG);
       setFooterBg(LIGHT_WINDOW_BG);
