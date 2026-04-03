@@ -468,8 +468,13 @@
 }
   /* Responsive: stack columns on small screens */
   @media (max-width: 860px){
-    .wrap{ grid-template-columns: 1fr; }
+    /* .wrap{ grid-template-columns: 1fr; }
     aside.left, main.right { grid-column:1; }
+  } */
+    .wrap { grid-template-columns: 1fr; }
+  aside.left, main.right { grid-column: 1; }
+  main.right { order: 1; }
+  aside.left { order: 2; }
   }
     @media only screen and (max-width: 700px) {
     .game-scene {
