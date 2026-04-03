@@ -471,6 +471,19 @@
     .wrap{ grid-template-columns: 1fr; }
     aside.left, main.right { grid-column:1; }
   }
+    @media only screen and (max-width: 700px) {
+    .game-scene {
+      flex-direction: column;
+      align-items: center;
+    }
+    .game-scene iframe {
+      width: 100% !important;
+      min-height: 400px;
+    }
+    .game-text {
+      width: 100%;
+    }
+  }
 
 </style>
 </head>
@@ -640,8 +653,7 @@
           <iframe frameborder="0" 
             src="https://itch.io/embed-upload/17039476?color=c2a580" 
             allowfullscreen="true" 
-            width="736" 
-            style="border:0;">
+            style="border:0; width:100%; min-height:480px;">
             <a href="https://ginacities.itch.io/potion-puzzle-shop">Play Potion Puzzle Shop on itch.io</a>
           </iframe>
           <div class="game-text content">
