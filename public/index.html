@@ -501,6 +501,33 @@
   text-align: right;
 }
 
+.nav-grid-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pill.nav-pill-active {
+  background: var(--violet);
+  color: var(--white);
+}
+
+.pill.nav-pill-soon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soon-badge {
+  font-size: 7px;
+  font-family: "Press Start 2P", cursive;
+  background: var(--pink);
+  color: var(--dark);
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--violet);
+}
+
 
 @media only screen and (max-width: 700px) {
   .game-scene{
@@ -564,16 +591,19 @@
     <aside class="left">
       <section class="window">
         <div class="titlebar">
-          <svg class="icon pixel" aria-hidden="true"><use href="#i-person"/></svg>
-          <span>bio</span>
+          <svg class="icon pixel" aria-hidden="true"><use href="#i-home"/></svg>
+          <span>navigation</span>
           <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
         <div class="content">
-          <dl>
-            <dt>name</dt><dd>Gina</dd>
-            <dt>vibe</dt><dd>pastel, celestial, cosy games, crackling candles, slipper socks, lofi</dd>
-            <dt>hobbies</dt><dd>crochet, sewing, knitting, coding, playing games, youtube</dd>
-          </dl>
+          <nav class="nav-grid-vertical" aria-label="site navigation">
+            <a class="pill nav-pill-active" href="/">🏠 home</a>
+            <a class="pill nav-pill-soon" href="#">🎮 games <span class="soon-badge">soon</span></a>
+            <a class="pill nav-pill-soon" href="#">📖 devlog <span class="soon-badge">soon</span></a>
+            <a class="pill nav-pill-soon" href="#">🌙 about <span class="soon-badge">soon</span></a>
+            <a class="pill nav-pill-soon" href="#">🧶 crafts <span class="soon-badge">soon</span></a>
+            <a class="pill nav-pill-soon" href="#">📬 contact <span class="soon-badge">soon</span></a>
+          </nav>
         </div>
       </section>
 
@@ -927,7 +957,8 @@ function buildMarquee() {
       a.href = b.href;
       a.target = '_blank';
       a.className = 'pill';
-      // a.style.fontSize = '10px';
+      a.style.fontSize = '16px';
+      a.style.marginBottom = '5px';
       a.textContent = b.label;
       a.dataset.umamiEvent = b.event;
       a.dataset.umamiEventLocation = 'GinaCities Dog Section';
