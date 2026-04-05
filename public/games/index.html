@@ -6,7 +6,7 @@
 <meta name="keywords" content="Game dev, Indie dev, Cute games">
 <meta name="author" content="Gina Giannetti">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>GinaCities</title>
+<title>GinaCities — Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -53,8 +53,8 @@
   </div>
   <div class="content">
     <nav class="nav-grid-vertical" aria-label="site navigation">
-      <a class="pill nav-pill-active" href="/">🏠 home</a>
-      <a class="pill " href="/games/">🎮 games</a>
+      <a class="pill " href="/">🏠 home</a>
+      <a class="pill nav-pill-active" href="/games/">🎮 games</a>
       <a class="pill nav-pill-soon" href="#">📖 devlog <span class="soon-badge">soon</span></a>
       <a class="pill nav-pill-soon" href="#">🌙 about <span class="soon-badge">soon</span></a>
       <a class="pill nav-pill-soon" href="#">🧶 crafts <span class="soon-badge">soon</span></a>
@@ -127,155 +127,16 @@
       
 <section class="window">
   <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 1h10v5a5 5 0 0 1-10 0V1zm-2 1h2v3a5.06 5.06 0 0 1-.5.5A3 3 0 0 1 1 3V2zm12 0h2v1a3 3 0 0 1-1.5 2.5A5.06 5.06 0 0 1 13 5V2zM6 11h4v2H6zm-2 2h8v2H4z"/></svg>
-    <span>Potion Puzzle Shop Leaderboard</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-  </div>
-  <div class="content">
-    <div class="lb-tabs" id="lb-tabs">
-      <button class="pill lb-pill" onclick="loadTab('easy',this)">💜 gentle</button>
-      <button class="pill lb-pill active-tab" onclick="loadTab('medium',this)">🌗 balanced</button>
-      <button class="pill lb-pill" onclick="loadTab('hard',this)">☠️ strong</button>
-    </div>
-    <div class="lb-body" id="lb-body">loading scores...</div>
-    <div class="lb-footer" id="lb-footer"></div>
-  </div>
-</section>
-
-<section class="window">
-  <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-square"/></svg>
-    <span>Potion Puzzle Shop</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-  </div>
-  <div class="game-scene">
-    <iframe frameborder="0"
-      src="https://itch.io/embed-upload/17039476?color=c2a580"
-      allowfullscreen="true"
-      style="border:0; width:100%; min-height:480px;">
-      <a href="https://ginacities.itch.io/potion-puzzle-shop">Play Potion Puzzle Shop on itch.io</a>
-    </iframe>
-    <div class="game-text content">
-      <p>Introducing my new game - Potion Puzzle Shop!</p>
-      <p>You've always made the most incredible teas that everyone says leaves them feeling fantastic, you wonder if you could ever use this wisdom to make magical potions as well...</p>
-      <p>You are running a magical shop, orders are coming in quickly for your magical recipes in the form of cards.</p>
-      <p><img src="https://img.itch.zone/aW1nLzI1ODkzODM3LnBuZw==/original/BVKhMB.png" loading="lazy" width="200"></p>
-      <p>In order to fulfil the request you need to check for the correct recipe in the magical spell book.</p>
-      <p>This will tell you what ingredients you need to brew this potion, follow the recipe, and clear all the cards.</p>
-      <p>If you get stuck, you may need to brew a special poison.</p>
-      <p>These use destructive magic, and can clear things in your way. But be careful, they will cost you.</p>
-      <p>Good luck dear mage, you will need it.</p>
-    </div>
-  </div>
-</section>
-
-<section id="home" class="window">
-  <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-home"/></svg>
-    <span>home</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-  </div>
-  <div class="content">
-    <div class="card">
-      <p>hello! welcome to my tiny pastel corner of the web. As you can probably tell, I really miss the early internet days of Geocities, MySpace, Neopets etc etc. I have tried to create that here, in my own small dedicated space. 🌙🍵</p>
-      <p>I have recently taken up the hobby of game development. I've been having a lot of fun and it has been very rewarding. Please see <a href="https://ginacities.itch.io" data-umami-event="Clicked Itch.io" data-umami-event-platform="Itch.io" data-umami-event-location="GinaCities Hero Section" target="_blank">my Itch page</a> to view my games.</p>
-    </div>
-  </div>
-</section>
-
-<section class="window">
-  <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-dog"/></svg>
-    <span>My pet doggy</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-  </div>
-  <div class="game-scene">
-    <iframe id="dogIframe" src="https://ginacities.com/doggy/?embed=1&dog=Corgi&variant=0&room=cute" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>
-    <div class="game-text content">
-      <p>I did it! I finally made my first game in Godot, it's a very simple ambient doggy that wanders around, sits down, sleeps and entertains itself.</p>
-      <p>The doggy will just happily live on your page, you can click on them for love, and their food and water can run out, you can click it to top it up, but no harm will ever come to them.</p>
-      <p>If you'd like your own doggy then click the cog in the top right, go back to the menu and select your own dog and room of choice. Then come back to the cog and embed them using the code onto your own page.</p>
-      <p>I hope it brings you joy!</p>
-    </div>
-  </div>
-</section>
-
-<section class="window">
-  <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-person"/></svg>
-    <span>About me</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-  </div>
-  <div class="content">
-    <div class="card">
-      <p>When I was about 12 I was exposed to the wonderful world of The Sims, I remember being sad at the lack of <em>fashion</em> in the game so I went looking around for the in-game clothing, I found a random folder in C:/Program Files where the clothes were stored as image files, I opened Photoshop and I altered them, with like hearts and stars and general pink-ness. I put them back in the folder and I booted up the game wondering if this would work - and it worked! My crazy creations were IN THE ACTUAL GAME. I found this incredible and absurd and started to try to make clothes that were even more elaborate. I then decided that the world needed my fashion. So I built a website called <b>Gina Fashion</b> where I hosted my creations as downloadable files where people could download them and put them into their own game. Of course nobody did, I was 12 and there was no SEO and no way of finding my site. But still, my love of cosy games, fashion, web development and general hackery was born.</p>
-      <p>I work full time as a software engineer, and the rest of my time is spent petting my dog, and building games.</p>
-    </div>
-  </div>
-</section>
-
-<section id="devlog" class="window">
-  <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-games"/></svg>
-    <span>Bsky feed</span>
+    <span>games</span>
     <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
   </div>
-  <bsky-embed username="ginacities.com" limit="3" load-more="true"></bsky-embed>
+  <div class="content">
+    <div class="card">
+      <p>games page coming soon! 🎮</p>
+    </div>
+  </div>
 </section>
-
-<script>
-  const _lbCache = {};
-
-  function _lbEsc(str) {
-    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-  function _lbDate(iso) {
-    try { return new Date(iso).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}); }
-    catch(e) { return iso.slice(0,10); }
-  }
-  function _lbRender(data) {
-    if (!data || !data.length) return '<p style="color:var(--violet);font-family:\'Press Start 2P\',cursive;font-size:10px;text-align:center;padding:20px;">no scores yet — be the first!</p>';
-    const medals = ['🥇','🥈','🥉'];
-    const sorted = [...data].sort((a,b) => b.score - a.score);
-    const rows = sorted.map((e,i) => `<tr style="border-bottom:1px dashed var(--lav-2);${i%2===1?'background:rgba(233,221,255,0.2)':''}">
-      <td style="padding:8px 10px;">${i<3 ? medals[i] : '<span style="font-family:\'Press Start 2P\',cursive;font-size:9px;">#'+(i+1)+'</span>'}</td>
-      <td style="padding:8px 10px;font-weight:600;">${_lbEsc(e.name)}</td>
-      <td style="padding:8px 10px;font-weight:700;color:var(--dark);">${e.score.toLocaleString()}</td>
-      <td style="padding:8px 10px;font-size:12px;color:var(--violet);">${_lbDate(e.date)}</td>
-    </tr>`).join('');
-    return `<div style="max-height:265px;overflow-y:auto;border:1px solid var(--lav-2);">
-      <table style="width:100%;border-collapse:collapse;">
-        <thead><tr style="background:#7964a7;color:#ffffff;border-bottom:2px solid var(--violet);position:sticky;top:0;">
-          <th style="padding:7px 10px;text-align:left;font-size:12px;">#</th>
-          <th style="padding:7px 10px;text-align:left;font-size:12px;">mage</th>
-          <th style="padding:7px 10px;text-align:left;font-size:12px;">score</th>
-          <th style="padding:7px 10px;text-align:left;font-size:12px;">date</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>`;
-  }
-  async function loadTab(diff, btn) {
-    document.querySelectorAll('#lb-tabs .pill').forEach(p => { p.style.background='var(--lav)'; p.style.color='var(--ink)'; });
-    btn.style.background = 'var(--dark)';
-    btn.style.color = '#fff';
-    const body = document.getElementById('lb-body');
-    const footer = document.getElementById('lb-footer');
-    if (_lbCache[diff]) { body.innerHTML = _lbRender(_lbCache[diff]); footer.textContent=`${_lbCache[diff].length} scores on record`; return; }
-    body.innerHTML = '<p style="color:var(--violet);font-family:\'Press Start 2P\',cursive;font-size:10px;text-align:center;padding:20px;">loading scores...</p>';
-    footer.textContent = '';
-    try {
-      const res = await fetch(`https://api.ginacities.com/leaderboard/${diff}`);
-      const data = await res.json();
-      _lbCache[diff] = data;
-      body.innerHTML = _lbRender(data);
-      footer.textContent = `${data.length} score${data.length!==1?'s':''} on record`;
-    } catch(e) {
-      body.innerHTML = '<p style="color:var(--violet);text-align:center;padding:20px;">couldn\'t load scores — try again later</p>';
-    }
-  }
-  loadTab('medium', document.querySelectorAll('#lb-tabs .pill')[1]);
-</script>
     </main>
 
     <footer class="site">

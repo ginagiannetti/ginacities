@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="crt">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="{{ description or 'Ginacities is the home of Gina Giannetti, Junior Software Engineer @ BBC News. Trying to make cosy, perhaps mystical games in my spare time.' }}">
+<meta name="keywords" content="Game dev, Indie dev, Cute games">
+<meta name="author" content="Gina Giannetti">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{{ title or 'GinaCities' }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/AdobeStock_1668008849.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/AdobeStock_1668008849.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/AdobeStock_1668008849.png" sizes="180x180">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@latest/dist/bsky-embed.es.js" async></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="209d67bd-268a-4c17-9a15-a01c26768d9b"></script>
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" class="btn mode-toggle" id="modeToggle" type="button" aria-label="toggle dark mode">
+    <svg class="icon pixel" aria-hidden="true"><use href="#i-moon"/></svg>
+    <span id="modeLabel">dark mode</span>
+  </button>
+
+  <div class="stars" id="stars"></div>
+  <div class="rain" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header class="site">
+      <div id="logo">
+        <div class="title">GinaCities</div>
+        <div class="subtitle">Gina's Cosmic Corner</div>
+      </div>
+    </header>
+
+    {% include "components/marquee.njk" %}
+
+    <aside class="left">
+      {% include "../components/nav.njk" %}
+      {% include "../components/music.njk" %}
+      {% include "../components/sidebar.njk" %}
+    </aside>
+
+    <main class="right">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site">
+      <div id="badges" aria-label="88x31 button bar">
+        <a href="https://lovesick.cafe/grrrl" data-umami-event="Clicked Made by a girl" data-umami-event-location="GinaCities Footer Section" target="_blank"><img alt="Made by a girl" src="https://loves1ck.neocities.org/img/sozai/grrrl/madebya-04-1.png" loading="lazy" height="51" width="72"></a>
+        <a href="https://lemontchi.neocities.org" target="_blank" data-umami-event="Clicked Lemontchi" data-umami-event-location="GinaCities Footer Section"><img alt="lemontchi banner" src="https://lemontchi.neocities.org/lemontchibutton.gif" loading="lazy" height="31" width="88"></a>
+        <a href="https://neocities.org/site/ginacities" target="_blank" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Footer Section"><img alt="neocities banner" src="/assets/banners/neocities.gif" loading="lazy" height="31" width="88"></a>
+        <a href="https://strawberry-transneu.neocities.org" target="_blank" data-umami-event="Clicked strawberry-transneu" data-umami-event-location="GinaCities Footer Section"><img src="https://strawberry-transneu.neocities.org/graphics/b_strw.png" loading="lazy" height="31" width="88"></a>
+        <a href="https://kuroi.com.br/" target="_blank" data-umami-event="Clicked Kuroi" data-umami-event-location="GinaCities Footer Section"><img src="/assets/banners/kuroi.png" alt="Kuroi banner" loading="lazy" height="31" width="88"></a>
+      </div>
+    </footer>
+  </div>
+
+  {% include "components/icons.njk" %}
+
+  <script src="/assets/js/stars.js"></script>
+  <script src="/assets/js/marquee.js"></script>
+  <script src="/assets/js/darkmode.js"></script>
+  <script src="/assets/js/music.js"></script>
+  <script data-goatcounter="https://ginacities.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

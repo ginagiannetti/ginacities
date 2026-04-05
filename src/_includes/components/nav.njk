@@ -1,0 +1,17 @@
+<section class="window">
+  <div class="titlebar">
+    <svg class="icon pixel" aria-hidden="true"><use href="#i-home"/></svg>
+    <span>navigation</span>
+    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+  </div>
+  <div class="content">
+    <nav class="nav-grid-vertical" aria-label="site navigation">
+      <a class="pill {% if page.url == '/' %}nav-pill-active{% endif %}" href="/">🏠 home</a>
+      <a class="pill {% if page.url == '/games/' %}nav-pill-active{% endif %}" href="/games/">🎮 games</a>
+      <a class="pill nav-pill-soon" href="#">📖 devlog <span class="soon-badge">soon</span></a>
+      <a class="pill nav-pill-soon" href="#">🌙 about <span class="soon-badge">soon</span></a>
+      <a class="pill nav-pill-soon" href="#">🧶 crafts <span class="soon-badge">soon</span></a>
+      <a class="pill nav-pill-soon" href="#">📬 contact <span class="soon-badge">soon</span></a>
+    </nav>
+  </div>
+</section>
