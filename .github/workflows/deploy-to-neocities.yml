@@ -2,22 +2,26 @@ name: Deploy to Neocities
 on:
   push:
     branches: [ main ]
-
 concurrency:
   group: deploy-to-neocities
   cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build
       - name: Deploy folder to Neocities
         uses: bcomnes/deploy-to-neocities@v3
         with:
           api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
-          dist_dir: public
+          dist_dir: _site
           preview_before_deploy: true
           cleanup: false
           neocities_supporter: true

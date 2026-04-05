@@ -460,6 +460,48 @@
   align-items: center;
   gap: 6px;
 }
+.marquee-container {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.lb-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pill.lb-pill {
+  border: none;
+}
+
+.lb-body {
+  font-size: 15px;
+}
+
+.lb-footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--violet);
+  text-align: right;
+}
+
+
 @media only screen and (max-width: 700px) {
   .game-scene{
     flex-direction: column;
@@ -509,6 +551,14 @@
         <div class="subtitle">Gina's Cosmic Corner</div>
       </div>
     </header>
+  <div class="marquee-container window">
+    <div class="titlebar">
+      <svg class="icon pixel" aria-hidden="true"><use href="#i-dog"/></svg>
+      <span>sites featuring my doggy</span>
+      <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    </div>
+    <div class="marquee-track" id="marq-track"></div>
+  </div>
 
     <!-- LEFT COLUMN: navigation + bio/contact windows -->
     <aside class="left">
@@ -561,42 +611,6 @@
         </div>
       </section>
 
-      <section class="window">
-        <div class="titlebar">
-          <svg class="icon pixel" aria-hidden="true"><use href="#i-dog"/></svg>
-          <span>Sites featuring my doggy</span>
-          <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        </div>
-        <div class="content buttons-row">
-          <a data-umami-event="Clicked Lemontchi"  data-umami-event-location="GinaCities Dog Section" href="https://lemontchi.neocities.org/home" target="_blank"><img alt="lemontchi banner" src="./assets/banners/lemontchibutton.gif" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked dirtstarr"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://dirtstarr.neocities.org/" target="_blank">dirtstarr</a>
-          <a data-umami-event="Clicked breadavota"  data-umami-event-location="GinaCities Dog Section" href="https://breadavota.cafe/bakery/#fidough" target="_blank"><img alt="breadavota banner" src="./assets/banners/breadavotabutton.gif" loading="lazy" height="31" width="88" alt="An 88 by 31 button that says breadavota.cafe"></a>
-          <a data-umami-event="Clicked eberlins"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eberlins.neocities.org/" target="_blank">eberlinks</a>
-          <a data-umami-event="Clicked eggtuna"  data-umami-event-location="GinaCities Dog Section" class="pill" href="https://eggtuna.neocities.org/" target="_blank">eggtuna</a>
-          <a data-umami-event="Clicked samsolarsystem"  data-umami-event-location="GinaCities Dog Section" href="https://samsolarsystem.neocities.org/Virtualpets" target="_blank"><img alt="sams solar system banner" src="./assets/banners/samsolarsystem.gif" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked ravenway" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://ravenway.neocities.org/" target="_blank">ravenway</a>
-          <a data-umami-event="Clicked aerith" data-umami-event-location="GinaCities Dog Section" href="https://aerith.me/" target="_blank"><img alt="aerith banner" src="./assets/banners/aerith.png" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked whooami" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://whooami.neocities.org/" target="_blank">whooami</a>
-          <a data-umami-event="Clicked betapopsicle" data-umami-event-location="GinaCities Dog Section" href="https://betapopsicle.neocities.org/blog" target="_blank"><img alt="beta popsicle banner" src="./assets/banners/betapopsiclebutton_1.gif" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked dannydebito" data-umami-event-location="GinaCities Dog Section" href="https://dannydebito.nekoweb.org/" target="_blank"><img alt="danny debito banner" src="./assets/banners/dannydebito.jpg" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked spacecadet" data-umami-event-location="GinaCities Dog Section" href="https://starbug.neocities.org/shinies" target="_blank"><img alt="starbug banner" src="./assets/banners/starbug.png" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked burningfrogpantz" data-umami-event-location="GinaCities Dog Section" href="https://burningfrogpantz.neocities.org/" target="_blank"><img alt="burningfrogpantz banner" src="./assets/banners/burningfrogpantz.gif" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked 2000sdreamvault" data-umami-event-location="GinaCities Dog Section" href="https://2000sdreamvault.neocities.org/Home" target="_blank"><img alt="2000sdreamvault banner" src="./assets/banners/2000sDreamVaultButton1.png" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked mchamomilla" data-umami-event-location="GinaCities Dog Section" href="https://mchamomilla.nekoweb.org/" target="_blank"><img src="./assets//banners/mcbutton.gif" alt="mchamomilla banner" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked dakotamarshall" data-umami-event-location="GinaCities Dog Section" href="https://dakotamarshall.net/" target="_blank"><img src="./assets//banners/bonealisa.apng" alt="dakotamarshall banner" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked passiveregulator" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://passiveregulator.neocities.org/" target="_blank">passiveregulator</a>
-          <a data-umami-event="Clicked stupidpizza" data-umami-event-location="GinaCities Dog Section" href="https://moodybynature.stupid.pizza/site_data/other/pets.html" target="_blank"><img src="./assets//banners/stupidpizza.gif" alt="stupid pizza banner" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked peachyvoid" data-umami-event-location="GinaCities Dog Section" href="https://peachyvoid.com/" target="_blank"><img src="./assets//banners/peachyvoid.gif" alt="peachyvoid banner" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked onlyvamps" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://onlyvamps.blogspot.com/" target="_blank">only vamps</a>
-          <a data-umami-event="Clicked puppywitchwurld333" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://puppywitchwurld333.neocities.org/about" target="_blank">puppywitchwurld333</a>
-          <a data-umami-event="Clicked loquetuttynodijo" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://loquetuttynodijo.blogspot.com/" target="_blank">loquetuttynodijo</a>
-          <a data-umami-event="Clicked biancawins" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://biancawins.neocities.org/cats/" target="_blank">bianca wins</a>
-          <a data-umami-event="Clicked apollothechaoticgremlin" data-umami-event-location="GinaCities Dog Section" href="https://apollo-the-chaotic-gremlin.neocities.org/" target="_blank"><img src="./assets//banners/apollo.png" alt="apollo-the-chaotic-gremlin banner" loading="lazy" height="31" width="88"></a>
-          <a data-umami-event="Clicked nxtorious" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://nxtorious-hxly-mall.tumblr.com/dog/" target="_blank">Nxtorious</a>
-          <a data-umami-event="Clicked kassina" data-umami-event-location="GinaCities Dog Section" class="pill" href="https://kassina.neocities.org/" target="_blank">Kassina</a>
-        </div>
-      </section>
-
        <section class="window">
         <div class="titlebar">
           <svg class="icon pixel" aria-hidden="true"><use href="#i-links"/></svg>
@@ -639,13 +653,13 @@
           <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
         <div class="content">
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;" id="lb-tabs">
-            <button class="pill" onclick="loadTab('easy',this)" style="border:none;">💜 gentle</button>
-            <button class="pill active-tab" onclick="loadTab('medium',this)" style="border:none;">🌗 balanced</button>
-            <button class="pill" onclick="loadTab('hard',this)" style="border:none;">☠️ strong</button>
+          <div class="lb-tabs" id="lb-tabs">
+            <button class="pill lb-pill" onclick="loadTab('easy',this)">💜 gentle</button>
+            <button class="pill lb-pill active-tab" onclick="loadTab('medium',this)">🌗 balanced</button>
+            <button class="pill lb-pill" onclick="loadTab('hard',this)">☠️ strong</button>
           </div>
-          <div id="lb-body" style="font-size:15px;">loading scores...</div>
-          <div id="lb-footer" style="margin-top:12px;font-size:12px;color:var(--violet);text-align:right;"></div>
+          <div class="lb-body" id="lb-body">loading scores...</div>
+          <div class="lb-footer" id="lb-footer"></div>
         </div>
       </section>
       <section class="window lacey floral">
@@ -858,6 +872,74 @@ nobody did, I was 12 and there was no SEO and no way of finding my site. But sti
     setInterval(() => { for (let i=0;i<4;i++) spawnPetal(); }, 1200);
   }
 // --- falling stars/flowers end --- //
+// ---------- rolling banners start ---------- //
+const marqBanners = [
+  { href: "https://lemontchi.neocities.org/home",         img: "./assets/banners/lemontchibutton.gif",        alt: "lemontchi",            event: "Clicked Lemontchi" },
+  { href: "https://breadavota.cafe/bakery/#fidough",       img: "./assets/banners/breadavotabutton.gif",       alt: "breadavota",           event: "Clicked breadavota" },
+  { href: "https://samsolarsystem.neocities.org/Virtualpets", img: "./assets/banners/samsolarsystem.gif",     alt: "sams solar system",    event: "Clicked samsolarsystem" },
+  { href: "https://aerith.me/",                           img: "./assets/banners/aerith.png",                 alt: "aerith",               event: "Clicked aerith" },
+  { href: "https://betapopsicle.neocities.org/blog",      img: "./assets/banners/betapopsiclebutton_1.gif",   alt: "beta popsicle",        event: "Clicked betapopsicle" },
+  { href: "https://dannydebito.nekoweb.org/",             img: "./assets/banners/dannydebito.jpg",            alt: "danny debito",         event: "Clicked dannydebito" },
+  { href: "https://starbug.neocities.org/shinies",        img: "./assets/banners/starbug.png",                alt: "starbug",              event: "Clicked spacecadet" },
+  { href: "https://burningfrogpantz.neocities.org/",      img: "./assets/banners/burningfrogpantz.gif",       alt: "burningfrogpantz",     event: "Clicked burningfrogpantz" },
+  { href: "https://2000sdreamvault.neocities.org/Home",   img: "./assets/banners/2000sDreamVaultButton1.png", alt: "2000sdreamvault",      event: "Clicked 2000sdreamvault" },
+  { href: "https://mchamomilla.nekoweb.org/",             img: "./assets/banners/mcbutton.gif",               alt: "mchamomilla",          event: "Clicked mchamomilla" },
+  { href: "https://dakotamarshall.net/",                  img: "./assets/banners/bonealisa.apng",             alt: "dakotamarshall",       event: "Clicked dakotamarshall" },
+  { href: "https://moodybynature.stupid.pizza/site_data/other/pets.html", img: "./assets/banners/stupidpizza.gif", alt: "stupid pizza",  event: "Clicked stupidpizza" },
+  { href: "https://peachyvoid.com/",                      img: "./assets/banners/peachyvoid.gif",             alt: "peachyvoid",           event: "Clicked peachyvoid" },
+  { href: "https://apollo-the-chaotic-gremlin.neocities.org/", img: "./assets/banners/apollo.png",           alt: "apollo-the-chaotic-gremlin", event: "Clicked apollothechaoticgremlin" },
+];
+
+const marqTextOnly = [
+  { href: "https://dirtstarr.neocities.org/",               label: "dirtstarr",         event: "Clicked dirtstarr" },
+  { href: "https://eberlins.neocities.org/",                label: "eberlinks",         event: "Clicked eberlins" },
+  { href: "https://eggtuna.neocities.org/",                 label: "eggtuna",           event: "Clicked eggtuna" },
+  { href: "https://ravenway.neocities.org/",                label: "ravenway",          event: "Clicked ravenway" },
+  { href: "https://whooami.neocities.org/",                 label: "whooami",           event: "Clicked whooami" },
+  { href: "https://passiveregulator.neocities.org/",        label: "passiveregulator",  event: "Clicked passiveregulator" },
+  { href: "https://onlyvamps.blogspot.com/",                label: "only vamps",        event: "Clicked onlyvamps" },
+  { href: "https://puppywitchwurld333.neocities.org/about", label: "puppywitchwurld333", event: "Clicked puppywitchwurld333" },
+  { href: "https://loquetuttynodijo.blogspot.com/",         label: "loquetuttynodijo",  event: "Clicked loquetuttynodijo" },
+  { href: "https://biancawins.neocities.org/cats/",         label: "bianca wins",       event: "Clicked biancawins" },
+  { href: "https://nxtorious-hxly-mall.tumblr.com/dog/",   label: "Nxtorious",         event: "Clicked nxtorious" },
+  { href: "https://kassina.neocities.org/",                 label: "Kassina",           event: "Clicked kassina" },
+];
+
+function buildMarquee() {
+  const track = document.getElementById('marq-track');
+  const allItems = [
+    ...marqBanners.map(b => {
+      const a = document.createElement('a');
+      a.href = b.href;
+      a.target = '_blank';
+      a.dataset.umamiEvent = b.event;
+      a.dataset.umamiEventLocation = 'GinaCities Dog Section';
+      const img = document.createElement('img');
+      img.src = b.img;
+      img.alt = b.alt;
+      img.loading = 'lazy';
+      img.height = 31;
+      a.appendChild(img);
+      return a;
+    }),
+    ...marqTextOnly.map(b => {
+      const a = document.createElement('a');
+      a.href = b.href;
+      a.target = '_blank';
+      a.className = 'pill';
+      // a.style.fontSize = '10px';
+      a.textContent = b.label;
+      a.dataset.umamiEvent = b.event;
+      a.dataset.umamiEventLocation = 'GinaCities Dog Section';
+      return a;
+    }),
+  ];
+
+  [...allItems, ...allItems].forEach(el => track.appendChild(el.cloneNode(true)));
+}
+
+buildMarquee();
+// ---------- rolling banners end ---------- //
 // ---------- dark mode start ---------- //
 (function () {
   const root  = document.documentElement;
