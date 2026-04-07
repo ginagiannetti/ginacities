@@ -476,19 +476,10 @@ dd{
   background: var(--violet);
   color: var(--white);
 }
-.pill.nav-pill-soon {
+.pill {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.soon-badge {
-  font-size: 7px;
-  font-family: "Press Start 2P", cursive;
-  background: var(--pink);
-  color: var(--dark);
-  padding: 2px 5px;
-  border-radius: 4px;
-  border: 1px solid var(--violet);
 }
 
 /* Responsive */

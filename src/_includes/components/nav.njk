@@ -5,13 +5,15 @@
     <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
   </div>
   <div class="content">
-    <nav class="nav-grid-vertical" aria-label="site navigation">
-      <a class="pill {% if page.url == '/' %}nav-pill-active{% endif %}" href="/">🏠 home</a>
-      <a class="pill {% if page.url == '/games/' %}nav-pill-active{% endif %}" href="/games/">🎮 games</a>
-      <a class="pill nav-pill-soon" href="#">📖 devlog <span class="soon-badge">soon</span></a>
-      <a class="pill nav-pill-soon" href="#">🌙 about <span class="soon-badge">soon</span></a>
-      <a class="pill nav-pill-soon" href="#">🧶 crafts <span class="soon-badge">soon</span></a>
-      <a class="pill nav-pill-soon" href="#">📬 contact <span class="soon-badge">soon</span></a>
-    </nav>
+  <nav class="nav-grid-vertical" aria-label="site navigation">
+    <a class="pill {% if page.url == '/' %}nav-pill-active{% endif %}" href="/">🏠 home</a>
+    <a class="pill {% if page.url == '/about/' %}nav-pill-active{% endif %}" href="/about/">🌙 about me</a>
+    <a class="pill {% if page.url == '/games/' %}nav-pill-active{% endif %}" href="/games/">🎮 games</a>
+    <a class="pill {% if page.url == '/videos/' %}nav-pill-active{% endif %}" href="/videos/">my videos</a>
+    <a class="pill {% if page.url == '/gallery/' %}nav-pill-active{% endif %}" href="/gallery/">gallery</a>
+    <a class="pill {% if page.url == '/hobbies/' %}nav-pill-active{% endif %}" href="/hobbies/">🧶 crafting/hobbies</a>
+    <a class="pill {% if page.url == '/socials/' %}nav-pill-active{% endif %}" href="/socials/">📬 social</a>
+    <a class="pill {% if page.url == '/guestbook/' %}nav-pill-active{% endif %}" href="/guestbook/">guestbook</a>
+  </nav>
   </div>
 </section>
