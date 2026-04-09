@@ -482,6 +482,122 @@ dd{
   justify-content: space-between;
 }
 
+/* Gallery */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  border: 2px solid var(--violet);
+  box-shadow: 3px 3px 0 0 var(--shadow);
+  overflow: hidden;
+  background: #fff;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.gallery-item .gallery-caption {
+  font-size: 11px;
+  padding: 6px 8px;
+  border-top: 2px solid var(--violet);
+  font-family: "Press Start 2P", cursive;
+  color: var(--dark);
+}
+
+/* lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border: 3px solid var(--violet);
+  box-shadow: 6px 6px 0 0 var(--shadow);
+}
+.lightbox-caption {
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  color: #fff;
+}
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  background: var(--lav);
+  border: 2px solid var(--violet);
+  padding: 6px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 var(--shadow);
+}
+
+/* Videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.video-grid--short {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.video-item {
+  border: 2px solid var(--violet);
+  box-shadow: 3px 3px 0 0 var(--shadow);
+  overflow: hidden;
+  background: #fff;
+}
+
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrap--short {
+  padding-bottom: 177.77%; /* 9:16 for vertical video */
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  font-size: 11px;
+  padding: 6px 8px;
+  border-top: 2px solid var(--violet);
+  font-family: "Press Start 2P", cursive;
+  color: var(--dark);
+}
+
 /* Responsive */
 @media only screen and (max-width: 700px) {
   .game-scene{
