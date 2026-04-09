@@ -42,31 +42,25 @@ title: GinaCities — Videos
 <section class="window">
   <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-games"/></svg>
-    <span>short form</span>
+    <span>shorts</span>
     <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
   </div>
   <div class="content">
     <div class="video-grid video-grid--short">
+      {% for short in shorts %}
       <div class="video-item">
         <div class="video-wrap video-wrap--short">
           <iframe
-            src="https://www.tiktok.com/embed/YOUR_TIKTOK_ID"
+            src="https://www.youtube.com/embed/{{ short.id }}"
+            title="{{ short.title }}"
             frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
         </div>
-        <div class="video-caption">video title here</div>
+        <div class="video-caption">{{ short.title }}</div>
       </div>
-      <div class="video-item">
-        <div class="video-wrap video-wrap--short">
-          <iframe
-            src="https://www.tiktok.com/embed/YOUR_TIKTOK_ID"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">video title here</div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

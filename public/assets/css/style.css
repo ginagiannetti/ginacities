@@ -458,6 +458,7 @@ dd{
 }
 .lb-body {
   font-size: 15px;
+  min-height: 200px;
 }
 .lb-footer {
   margin-top: 12px;
