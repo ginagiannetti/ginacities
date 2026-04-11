@@ -122,22 +122,16 @@ body::after{
 }
 
 /* Light/dark mode button styling */
-.mode-toggle{
+#mode-toggle{
   margin: 10px;
-  display: inline-flex; 
-  align-items: center; 
-  gap: 8px;
-  border:2px solid var(--violet);
-  color: var(--ink);
-  padding:6px 5px;
-  font-weight:700;
-  box-shadow: 3px 3px 0 0 var(--shadow);
-  cursor: url("/assets/cursors/Link_Select.cur"), 
-  url("/assets/cursors/Link_Select.ani"),
-          pointer;
 }
-.mode-toggle:hover{ 
+
+#mode-toggle:hover{ 
   transform: translate(-1px, -1px); 
+}
+:root[data-theme="dark"] .mode-toggle {
+  background: #5a5493;
+  color: #ffffff;
 }
 
 /* Falling petals/stars layer */

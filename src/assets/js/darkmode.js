@@ -1,6 +1,6 @@
 (function () {
   const root  = document.documentElement;
-  const btn   = document.getElementById('modeToggle');
+  const btn   = document.getElementById('mode-toggle');
   const label = document.getElementById('modeLabel');
   const dogIframe = document.getElementById('dogIframe');
 
@@ -52,8 +52,8 @@
       root.setAttribute('data-theme','dark');
       label.textContent = 'light mode';
       btn.setAttribute('aria-label','switch to light mode');
-      btn.style.backgroundColor = DARK_WINDOW_BG;
-      btn.style.color = DARK_WINDOW_COL;
+      // btn.style.backgroundColor = DARK_WINDOW_BG;
+      // btn.style.color = LIGHT_WINDOW_COL;
       setLinks(LIGHT_COL, DARK_WINDOW_COL);
       setBackgroundSize(DARK_BG_SIZE);
       setDogUrl(DARK_DOG_URL);
@@ -65,8 +65,8 @@
       root.removeAttribute('data-theme');
       label.textContent = 'dark mode';
       btn.setAttribute('aria-label','switch to dark mode');
-      btn.style.backgroundColor = LIGHT_COL;
-      btn.style.color = LIGHT_WINDOW_COL;
+      // btn.style.backgroundColor = LIGHT_COL;
+      // btn.style.color = LIGHT_WINDOW_COL;
       setLinks(LIGHT_WINDOW_COL, DARK_COL);
       setBackgroundSize(LIGHT_BG_SIZE);
       setDogUrl(LIGHT_DOG_URL);
