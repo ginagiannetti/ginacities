@@ -241,9 +241,13 @@ header.site{
   border: none;
   padding: 10px 14px;
 }
+
 .title{
   font-size: 50px;
   text-shadow: 2px 2px var(--violet);
+}
+.minimal-title{
+  font-weight: bold;
 }
 .subtitle{
   font-size:18px;
@@ -357,6 +361,7 @@ footer.site {
   /* box-shadow: 3px 3px 0 0 var(--win-pink-dark); */
   transition: transform .12s ease, background .12s ease;
   overflow: hidden; 
+  justify-content: center;
 }
 .pill:hover{ 
   transform: translate(-2px, -2px); 
@@ -409,6 +414,20 @@ dd{
 }
 .game-text{
   padding: 20px;
+}
+.dog-frame {
+  display: flex;
+  justify-content: center;
+  background: rgba(255,255,255,.7);
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+/*404*/
+.not-found{
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px;
 }
 
 /* Footer */
@@ -497,6 +516,7 @@ dd{
   gap: 12px;
   width: max-content;
   animation: scroll-left 40s linear infinite;
+  align-items: center;
 }
 .marquee-container:hover .marquee-track {
   animation-play-state: paused;
@@ -679,7 +699,6 @@ dd{
 }
 
 .links .pill {
-  justify-content: center;
   width: 100%;
   padding: 10px;
 }
