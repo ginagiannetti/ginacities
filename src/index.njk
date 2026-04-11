@@ -7,7 +7,7 @@ title: GinaCities
   <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-home"/></svg>
     <span>home</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    {% include "components/window-buttons.njk" %}
   </div>
   <div class="content">
     <div class="card">
@@ -22,7 +22,7 @@ title: GinaCities
   <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-dog"/></svg>
     <span>My pet doggy</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    {% include "components/window-buttons.njk" %}
   </div>
   <div class="game-scene">
     <iframe id="dogIframe" src="https://ginacities.com/doggy/?embed=1&dog=Corgi&variant=0&room=cute" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>

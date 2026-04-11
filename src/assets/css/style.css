@@ -12,6 +12,12 @@
   --bg-url: url('/assets/backgrounds/light.jpeg');
   --link: #C683E6;
   --link-hover: #5a5493;
+  --win-pink:        #f4a7c0;
+  --win-pink-dark:   #d97fa3;
+  --win-pink-light:  #fce4ef;
+  --win-lav:         #bfb3e8;
+  --win-lav-light:   #d4cdf5;
+  --win-lav-dark:    #9b8fd4;
 }
 
 :root[data-theme="dark"]{
@@ -235,52 +241,70 @@ footer.site {
 }
 
 /* ------------------ Window styling ------------------ */
-.window{
-  background: #ffffff;
-  border:2px solid var(--violet);
-  box-shadow: 3px 3px 0 0 var(--shadow);
-  overflow:hidden;
+.window {
+  background: var(--win-pink-light);
+  /* Outer bevel - light top/left, dark bottom/right */
+  border-top:    3px solid #ffffff;
+  border-left:   3px solid #ffffff;
+  border-right:  3px solid var(--win-pink-dark);
+  border-bottom: 3px solid var(--win-pink-dark);
+  /* Inner pink ring sits on top of the bevel via padding */
+  padding: 4px;
+  box-shadow: none;
+  outline: none;
+  overflow: visible;
+}
+.window::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+.window {
+  position: relative;
 }
 .titlebar.pixel {
-  font-family: "Press Start 2P", cursive;
-  text-shadow: 1px 1px var(--violet);
-  background:
-      linear-gradient(180deg, var(--lav-2), var(--lav)),
-      var(--tile-flower);
-  background-size: auto, 16px 16px;
+  background: linear-gradient(180deg,
+    var(--win-lav-light) 0%,
+    var(--win-lav)       60%,
+    var(--win-lav-dark)  100%
+  );
 }
-.titlebar{
+.titlebar {
+  background: linear-gradient(180deg,
+    var(--win-lav-light) 0%,
+    var(--win-lav)       60%,
+    var(--win-lav-dark)  100%
+  );
   color: #ffffff;
-  display:flex; 
-  align-items:center; 
-  gap:10px;
-  padding:8px 10px;
-  border:2px solid var(--violet);
-  font-weight:600; 
-  text-transform:lowercase;
-  letter-spacing:.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  margin: 0 0 3px 0;
+  border: none;
   font-family: "Press Start 2P", cursive;
-  font-size: 12px;
-  margin: 4px;
-  background-color:#7964a7;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .5px;
 }
-.titlebar .icons{
-  margin-left:auto; 
-  display:flex; 
-  gap:6px;
+.titlebar .icons {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
 }
-.titlebar .dot{
-  width:14px; 
-  height:14px; 
-  border:2px solid var(--violet);
-  background: var(--pink);
-  border-radius:3px; 
-  box-shadow: inset -2px -2px 0 0 rgba(0,0,0,.06);
-}
-.window .content{ 
-  padding:14px 14px 18px; 
-  border:2px solid var(--violet);
-  margin: 4px;
+
+.window .content {
+  padding: 10px 12px 14px;
+  border: none;
+  margin: 0;
+  background: transparent;
+  border-top:    3px solid var(--win-pink-dark);
+  border-left:   3px solid var(--win-pink-dark);
+  border-right:  3px solid var(--win-pink-light);
+  border-bottom: 3px solid var(--win-pink-light);
 }
 
 /* Nav pills */
@@ -609,8 +633,6 @@ dd{
 @media (max-width: 860px){
   .wrap { grid-template-columns: 1fr; }
   aside.left, main.right { grid-column: 1; }
-  main.right { order: 1; }
-  aside.left { order: 2; }
 }
 @media only screen and (max-width: 700px) {
   .game-scene {

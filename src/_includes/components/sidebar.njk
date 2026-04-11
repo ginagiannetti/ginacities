@@ -2,7 +2,7 @@
   <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-links"/></svg>
     <span>Link to me!</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    {% include "components/window-buttons.njk" %}
   </div>
   <div class="content">
     <img src="https://ginacities.com/assets/banners/GinaCities.gif" alt="GinaCities banner" loading="lazy" width="88" height="30">
@@ -14,7 +14,7 @@
   <div class="titlebar">
     <svg class="icon pixel" aria-hidden="true"><use href="#i-contact"/></svg>
     <span>contact</span>
-    <div class="icons"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    {% include "components/window-buttons.njk" %}
   </div>
   <div class="content buttons-row">
     <a class="pill" data-umami-event="Clicked Itch.io" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://ginacities.itch.io" aria-label="itch">itch.io</a>
