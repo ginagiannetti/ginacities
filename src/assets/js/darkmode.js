@@ -22,8 +22,14 @@
     title.style.color = font_col;
   }
   function setBackgroundSize(value){
+  const isLinksPage = document.body.classList.contains('link-body');
+
+  if (isLinksPage) {
+    document.body.style.backgroundSize = 'cover';
+  } else {
     document.body.style.backgroundSize = value;
   }
+}
   function setLinks(baseColor, hoverColor) {
     if (baseColor) root.style.setProperty('--link', baseColor);
     if (hoverColor) root.style.setProperty('--link-hover', hoverColor);
