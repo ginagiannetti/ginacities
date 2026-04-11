@@ -189,6 +189,21 @@ body::after{
 }
 
 /* ------------------ Layout ------------------ */
+.links-body{
+  background-size:cover;
+}
+.minimal-wrap {
+  transform: translateY(-20px);
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px 16px;
+}
 .wrap{
   position:relative; 
   z-index:1;
@@ -220,6 +235,9 @@ header.site{
   border-bottom: 3px solid var(--win-pink-dark);
   background: #ffffff;
   min-height: 79px;
+}
+.site-links #logo{
+  margin:0;
 }
 .title{
   font-size: 50px;
@@ -636,6 +654,40 @@ dd{
   border-top: 2px solid var(--violet);
   font-family: "Press Start 2P", cursive;
   color: var(--dark);
+}
+
+/* Links page */
+.links-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 16px;
+}
+
+.links-card {
+  width: 100%;
+  max-width: 520px; 
+}
+
+.links  {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.links .pill {
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.links-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Responsive */
