@@ -1,3 +1,4 @@
+(() => {
 const box = document.getElementById('stars');
 for(let i=0;i<40;i++){
   const s = document.createElement('div');
@@ -34,3 +35,4 @@ if (!reduce) {
   for (let i=0;i<24;i++) spawnPetal();
   setInterval(() => { for (let i=0;i<4;i++) spawnPetal(); }, 1200);
 }
+})();

@@ -1,6 +1,6 @@
 <section id="music" class="window">
   <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-music"/></svg>
+    <img src="/assets/icons/cd.png" alt="cd">
     <span>music player</span>
     {% include "components/window-buttons.njk" %}
   </div>
@@ -10,10 +10,10 @@
       <div>
         <strong>Now Playing:</strong> <em id="trackTitle">—</em><br/>
         <div class="buttons-row" style="margin-top:8px">
-          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Prev" class="btn" id="prevBtn" type="button" aria-label="previous track">⏮</button>
-          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Play/Pause" class="btn" id="playBtn" type="button" aria-label="play/pause">▶</button>
-          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Next" class="btn" id="nextBtn" type="button" aria-label="next track">⏭</button>
-          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Loop" class="btn" id="loopBtn" type="button" aria-label="toggle loop">🔁</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Prev" class="pill" id="prevBtn" type="button" aria-label="previous track">⏮</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Play/Pause" class="pill" id="playBtn" type="button" aria-label="play/pause">▶</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Next" class="pill" id="nextBtn" type="button" aria-label="next track">⏭</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Loop" class="pill" id="loopBtn" type="button" aria-label="toggle loop">🔁</button>
         </div>
         <div class="progress" id="progress" aria-label="timeline" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
           <div class="bar" id="bar"></div>

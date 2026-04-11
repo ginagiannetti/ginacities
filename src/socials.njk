@@ -5,9 +5,11 @@ title: GinaCities — Socials
 
 <section id="devlog" class="window">
   <div class="titlebar">
-    <svg class="icon pixel" aria-hidden="true"><use href="#i-games"/></svg>
+    <img src="/assets/icons/phone.png" alt="flip phone">
     <span>Bsky feed</span>
     {% include "components/window-buttons.njk" %}
   </div>
-  <bsky-embed username="ginacities.com" limit="3" load-more="true"></bsky-embed>
+  <div class="content">
+    <bsky-embed username="ginacities.com" limit="3" load-more="true"></bsky-embed>
+  </div>
 </section>
