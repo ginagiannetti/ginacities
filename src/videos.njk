@@ -2,6 +2,38 @@
 layout: layouts/base.njk
 title: GinaCities — Videos
 ---
+<style>
+  .video-thumb {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-play-btn {
+  width: 56px;
+  height: 56px;
+  background: var(--win-lav);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--dark);
+  border: 3px solid var(--win-lav-light);
+  box-shadow: 3px 3px 0 0 var(--win-pink-dark);
+  transition: transform .12s ease;
+}
+
+.video-thumb:hover .video-play-btn {
+  transform: translate(-2px, -2px);
+}
+</style>
+
 
 <section class="window">
   <div class="titlebar">
@@ -64,3 +96,30 @@ title: GinaCities — Videos
     </div>
   </div>
 </section>
+
+<script>
+(() => {
+  document.querySelectorAll('.video-wrap--short').forEach(wrap => {
+    const iframe = wrap.querySelector('iframe');
+    if (!iframe) return;
+
+    const src = iframe.src;
+    const videoId = src.match(/embed\/([^?]+)/)?.[1];
+    if (!videoId) return;
+
+    iframe.style.display = 'none';
+
+    const thumb = document.createElement('div');
+    thumb.className = 'video-thumb';
+    thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/mqdefault.jpg)`;
+    thumb.innerHTML = '<div class="video-play-btn">▶</div>';
+    wrap.appendChild(thumb);
+
+    thumb.addEventListener('click', () => {
+      iframe.src = src + '?autoplay=1';
+      iframe.style.display = '';
+      thumb.remove();
+    });
+  });
+})();
+</script>
