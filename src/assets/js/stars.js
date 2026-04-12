@@ -28,7 +28,7 @@ if (!reduce) {
     s.style.animationDuration = dur + 's';
     s.style.animationDelay = delay + 's';
     s.style.fontSize = size + 'px';
-    s.style.color = Math.random() < .5 ? 'var(--violet)' : 'var(--pink-2)';
+    s.style.color = Math.random() < .5 ? 'var(--violet)' : 'var(--win-pink-light)';
     rain.appendChild(s);
     setTimeout(() => s.remove(), (dur + Math.abs(delay))*1000 + 100);
   }
