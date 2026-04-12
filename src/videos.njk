@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+title: GinaCities — Videos
+---
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/hat.png" alt="witch's hat">
+    <span>youtube</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="video-grid">
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/sCfOKttghTY?si=_qImFuwGhpbFIYlJ"
+            title="video title"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">Why do we crave the 2000s internet so much?</div>
+      </div>
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/QYRHYpf8C5Q?si=BNnCOAV_tiESVb8R"
+            title="video title"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">Full devlog: Making Potion Puzzle Shop</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tarot.png" alt="tarot cards">
+    <span>shorts</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="video-grid video-grid--short">
+      {% for short in shorts %}
+      <div class="video-item">
+        <div class="video-wrap video-wrap--short">
+          <iframe
+            src="https://www.youtube.com/embed/{{ short.id }}"
+            title="{{ short.title }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">{{ short.title }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

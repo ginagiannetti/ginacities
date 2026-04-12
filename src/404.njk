@@ -1,0 +1,89 @@
+---
+layout: layouts/minimal.njk
+title: 404 • GinaCities
+permalink: /not_found.html
+---
+
+<div class="links-wrap">
+  <div class="not-found">
+
+    <div id="logo">
+      <div class="title minimal-title">Oh no! You seem to be lost!</div>
+      <div class="subtitle">Please stay for a while <img src="/assets/icons/book.png" class="nav-icon" alt="spellbook"></div>
+    </div>
+
+    <section class="window" aria-label="404 content">
+      <div class="titlebar">
+        <img src="/assets/icons/planet.png" class="titlebar-icon" alt="planet">
+        <span>404 • lost in the cosmic corner</span>
+        {% include "components/window-buttons.njk" %}
+      </div>
+      <div class="content">
+        <div class="card" style="text-align: center;">
+
+          <div class="dog-frame">
+            <iframe id="dogIframe"
+              src="https://ginacities.com/doggy/?embed=1&dog=Corgi&variant=0&room=cute"
+              width="324" height="324"
+              style="border:0; aspect-ratio: 1/1;"
+              allow="gamepad *"
+              title="Virtual doggy">
+            </iframe>
+          </div>
+
+          <p id="dogMeta" style="opacity: 0.85; margin: 10px 0 12px;">Loading doggy…</p>
+
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 12px;">
+            <button id="randomDogBtn" class="pill" type="button"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> random dog</button>
+            <a class="pill" href="https://ginacities.itch.io" target="_blank" rel="noreferrer"
+              data-umami-event="Clicked Itch.io" data-umami-event-location="GinaCities 404"><img src="/assets/icons/tama.png" class="nav-icon" alt="tamagotchi"> games</a>
+            <a class="pill" href="/"
+              data-umami-event="Clicked Home" data-umami-event-location="GinaCities 404"><img src="/assets/icons/alien.png" class="nav-icon" alt="alien"> go home</a>
+          </div>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://ginacities.com" target="_blank" rel="noreferrer"
+              data-umami-event="Clicked GinaCities.com" data-umami-event-location="GinaCities 404">
+              <img src="https://ginacities.com/assets/banners/GinaCities.gif"
+                alt="GinaCities banner" loading="lazy" width="88" height="30"
+                style="border: 2px solid var(--violet); box-shadow: 3px 3px 0 0 var(--shadow); image-rendering: pixelated;">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(() => {
+  const VARIANT_COUNTS = {
+    'Corgi': 4, 'Chihuahua': 3, 'bull_terrier': 2,
+    'mini_poodle': 3, 'Pug': 2, 'Papillon': 3,
+  };
+  const ROOMS = ['cute', 'goth', 'leaf', 'blue', 'xmas'];
+  const dogIframe = document.getElementById('dogIframe');
+  const dogMeta   = document.getElementById('dogMeta');
+
+  function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function randomInt(max)  { return Math.floor(Math.random() * (max + 1)); }
+
+  function setDog(dog, variant, room) {
+    const params = new URLSearchParams({ embed: '1', dog, variant, room });
+    dogIframe.src = `https://ginacities.com/doggy/?${params}`;
+    dogMeta.textContent = `You found a ${dog} in the ${room} room`;
+  }
+
+  function rollDog() {
+    const dog     = pickRandom(Object.keys(VARIANT_COUNTS));
+    const variant = randomInt((VARIANT_COUNTS[dog] ?? 1) - 1);
+    const room    = pickRandom(ROOMS);
+    setDog(dog, variant, room);
+  }
+
+  document.getElementById('randomDogBtn').addEventListener('click', rollDog);
+  rollDog();
+})();
+</script>

@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: GinaCities — Socials
+---
+
+{% include "components/socials.njk" %}
+
+<section id="devlog" class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/phone.png" alt="flip phone">
+    <span>Bsky feed</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <bsky-embed username="ginacities.com" limit="3" load-more="true"></bsky-embed>
+  </div>
+</section>

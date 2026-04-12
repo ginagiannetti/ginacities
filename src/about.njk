@@ -1,0 +1,89 @@
+---
+layout: layouts/base.njk
+title: GinaCities — About Me
+---
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/smiley.png" alt="smiley">
+    <span>photos</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1472.webp', '')">
+        <img src="/assets/gallery/IMG_1472.webp" alt="Me in my office" loading="lazy">
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1914.webp', '')">
+        <img src="/assets/gallery/IMG_1914.webp" alt="My desk setup" loading="lazy">
+      </div>
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7143.webp', '')">
+        <img src="/assets/gallery/IMG_7143.webp" alt="Young me" loading="lazy">
+      </div>
+       <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7132.webp', '')">
+        <img src="/assets/gallery/IMG_7132.webp" alt="Me and Honey" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="pill lightbox-close" onclick="closeLightbox()">✕ close</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/glasses.png" alt="glasses">
+    <span>About me</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="card">
+      <p>When I was about 12 I was exposed to the wonderful world of The Sims, I remember being sad at the lack of <em>fashion</em> in the game so I went looking around for the in-game clothing, I found a random folder in C:/Program Files where the clothes were stored as image files, I opened Photoshop and I altered them, with like hearts and stars and general pink-ness. I put them back in the folder and I booted up the game wondering if this would work - and it worked! My crazy creations were IN THE ACTUAL GAME. I found this incredible and absurd and started to try to make clothes that were even more elaborate. I then decided that the world needed my fashion. So I built a website called <b>Gina Fashion</b> where I hosted my creations as downloadable files where people could download them and put them into their own game. Of course nobody did, I was 12 and there was no SEO and no way of finding my site. But still, my love of cosy games, fashion, web development and general hackery was born.</p>
+      <p>I work full time as a software engineer, and the rest of my time is spent petting my dog, and building games.</p>
+    </div>
+  </div>
+</section>
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/lolly.png" alt="lolly">
+    <span>My Favourite Things</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="/assets/gallery/IMG_1761.gif" alt="chansey" loading="lazy">
+        <div class="gallery-caption">chansey</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/gallery/IMG_1792.webp" alt="crochet" loading="lazy">
+        <div class="gallery-caption">crochet</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/assets/gallery/IMG_1508.webp" alt="purple nails" loading="lazy">
+        <div class="gallery-caption">doing my nails</div>
+      </div>
+       <div class="gallery-item">
+        <img src="/assets/gallery/peppermint_tea.png" alt="Peppermint tea" loading="lazy">
+        <div class="gallery-caption">peppermint tea</div>
+      </div>
+    </div>
+  </div>
+</section>

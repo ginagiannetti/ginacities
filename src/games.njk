@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+title: GinaCities — Games
+---
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/cd.png" alt="cd">
+    <span>My games</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    This page is an overview of all my games, please <a data-umami-event="Clicked Itch.io" data-umami-event-location="GinaCities Games Page" target="_blank" href="https://ginacities.itch.io" aria-label="itch">follow me on Itch.io</a> to be notified of any new releases!
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/book.png" alt="book">
+    <span>Potion Puzzle Shop Leaderboard</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="lb-tabs" id="lb-tabs">
+      <button class="pill" onclick="loadTab('easy',this)"><img src="/assets/icons/heart.png" class="nav-icon" alt="heart"> gentle</button>
+      <button class="pill active-tab" onclick="loadTab('medium',this)"><img src="/assets/icons/moon.png" class="nav-icon" alt="moon"> balanced</button>
+      <button class="pill " onclick="loadTab('hard',this)"><img src="/assets/icons/skull.png" class="nav-icon" alt="skull"> strong</button>
+    </div>
+    <div class="lb-body" id="lb-body">loading scores...</div>
+    <div class="lb-footer" id="lb-footer"></div>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/potion.png" alt="potion">
+    <span>Potion Puzzle Shop</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="game-scene">
+    <iframe frameborder="0"
+      src="https://itch.io/embed-upload/17039476?color=c2a580"
+      allowfullscreen="true"
+      style="border:0; width:100%; min-height:480px;">
+      <a href="https://ginacities.itch.io/potion-puzzle-shop">Play Potion Puzzle Shop on itch.io</a>
+    </iframe>
+    <div class="game-text content">
+      <p>Introducing my new game - Potion Puzzle Shop!</p>
+      <p>You've always made the most incredible teas that everyone says leaves them feeling fantastic, you wonder if you could ever use this wisdom to make magical potions as well...</p>
+      <p>You are running a magical shop, orders are coming in quickly for your magical recipes in the form of cards.</p>
+      <p><img src="https://img.itch.zone/aW1nLzI1ODkzODM3LnBuZw==/original/BVKhMB.png" loading="lazy" width="200"></p>
+      <p>In order to fulfil the request you need to check for the correct recipe in the magical spell book.</p>
+      <p>This will tell you what ingredients you need to brew this potion, follow the recipe, and clear all the cards.</p>
+      <p>If you get stuck, you may need to brew a special poison.</p>
+      <p>These use destructive magic, and can clear things in your way. But be careful, they will cost you.</p>
+      <p>Good luck dear mage, you will need it.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tama.png" alt="tamagotchi">
+    <span>Give a dog a home</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="game-scene">
+    <iframe src="https://itch.io/embed-upload/16751695" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>
+    <div class="game-text content">
+      <p>Adopt a doggy today!</p>
+      <p>This little pet doggy was my first game in Godot, it's a very simple ambient doggy that wanders around, sits down, sleeps and entertains itself.</p>
+      <p>The doggy will just happily live on your page, you can click on them for love, and their food and water can run out, you can click it to top it up, but no harm will ever come to them.</p>
+      <p>Select your own dog, then click on the cog for a code snippet you can add to your page.</p>
+      <p>I hope it brings you joy!</p>
+    </div>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/moon.png" alt="moon">
+    <span>A Little Christmas Market</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="game-scene">
+    <iframe src="https://itch.io/embed-upload/15742642?color=a0c6c7" width="500" height="500" style="border:0; aspect-ratio: 1 / 1;"></iframe>
+    <div class="game-text content">
+      <p>Welcome to A Little Christmas Market! What better way to feel Christmassy and special than to run your own snowy Christmas market with delightful wintery offerings.</p>
+      <p>Collect coins to purchase stalls with 12 stalls available for your Christmas market including an Almond stand, a Jewelery stand, Gingerbread, Pretzels and so much more! You can decide where the stalls go in your market, more stalls = more visitors! The higher value stalls give even more rewards. You may even get a furry visitor wandering around the market to see what the fuss is about.</p>
+      <p>Once the money starts coming in you might want to think about decorating your Christmas market with things from the item shop as well! </p>
+      <p>P.S This one works best on desktop </p>
+    </div>
+  </div>
+</section>
+<script src="/assets/js/leaderboard.js"></script>

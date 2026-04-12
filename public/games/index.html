@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en" class="crt">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Ginacities is the home of Gina Giannetti, Junior Software Engineer @ BBC News. Trying to make cosy, perhaps mystical games in my spare time.">
+<meta name="keywords" content="Game dev, Indie dev, Cute games">
+<meta name="author" content="Gina Giannetti">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GinaCities — Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/AdobeStock_1668008849.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/AdobeStock_1668008849.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/AdobeStock_1668008849.png" sizes="180x180">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@latest/dist/bsky-embed.es.js" async></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="209d67bd-268a-4c17-9a15-a01c26768d9b"></script>
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <button data-umami-event-location="Dark Mode" data-umami-event-type="Toggle On/Off" id="mode-toggle" class="pill"  type="button" aria-label="toggle dark mode">
+    <img src="/assets/icons/moon.png" class="nav-icon" alt="moon">
+    <span id="modeLabel">dark mode</span>
+  </button>
+
+  <div class="stars" id="stars"></div>
+  <div class="rain" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header class="site">
+      <div id="logo">
+        <div class="title">GinaCities</div>
+        <div class="subtitle">Gina's Cosmic Corner</div>
+      </div>
+    </header>
+
+    <div class="marquee-container window">
+  <div class="titlebar">
+    <img src="/assets/icons/tama.png" alt="tamagotchi">
+    <span>sites featuring my doggy</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="marquee-track" id="marq-track"></div>
+</div>
+
+    <aside class="left">
+      <section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/alien.png" alt="alien">
+    <span>navigation</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+  <nav class="nav-grid-vertical" aria-label="site navigation">
+    <a class="pill " href="/"><img src="/assets/icons/flower_smiley.png" class="nav-icon" alt="smiley flower"> home</a>
+    <a class="pill " href="/about/"><img src="/assets/icons/glasses.png" class="nav-icon" alt="glasses"> about me</a>
+    <a class="pill nav-pill-active" href="/games/"><img src="/assets/icons/cd.png" class="nav-icon" alt="cd"> my games</a>
+    <a class="pill " href="/videos/"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> my videos</a>
+    <a class="pill " href="/gallery/"><img src="/assets/icons/smiley.png" class="nav-icon" alt="smiley"> gallery</a>
+    <a class="pill " href="/socials/"><img src="/assets/icons/phone.png" class="nav-icon" alt="flip phone"> social</a>
+    <a class="pill " href="/guestbook/"><img src="/assets/icons/planet.png" class="nav-icon" alt="planet"> guestbook</a>
+  </nav>
+  </div>
+</section>
+      <section id="music" class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/cd.png" alt="cd">
+    <span>music player</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+    <div class="player" role="group" aria-label="music player">
+      <div class="cover" id="cover" aria-hidden="true"></div>
+      <div>
+        <strong>Now Playing:</strong> <em id="trackTitle">—</em><br/>
+        <div class="buttons-row" style="margin-top:8px">
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Prev" class="pill" id="prevBtn" type="button" aria-label="previous track">⏮</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Play/Pause" class="pill" id="playBtn" type="button" aria-label="play/pause">▶</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Next" class="pill" id="nextBtn" type="button" aria-label="next track">⏭</button>
+          <button data-umami-event="Clicked GinaCities Music Player" data-umami-event-type="Loop" class="pill" id="loopBtn" type="button" aria-label="toggle loop">🔁</button>
+        </div>
+        <div class="progress" id="progress" aria-label="timeline" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div class="bar" id="bar"></div>
+        </div>
+        <div class="time"><span id="cur">0:00</span> / <span id="dur">0:00</span></div>
+        <label class="vol">
+          vol
+          <input id="vol" type="range" min="0" max="1" step="0.01" value="0.9" />
+        </label>
+      </div>
+    </div>
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+</section>
+      <section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/planet.png" alt="planet">
+    <span>Link to me!</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+    <img src="https://ginacities.com/assets/banners/GinaCities.gif" alt="GinaCities banner" loading="lazy" width="88" height="30">
+    <textarea><a href="https://ginacities.com"><img src="https://ginacities.com/assets/banners/GinaCities.gif" alt="GinaCities banner"></a></textarea>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/phone.png" alt="flip phone">
+    <span>socials</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content buttons-row">
+    <a class="pill" data-umami-event="Clicked Itch.io" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://ginacities.itch.io" aria-label="itch">itch.io</a>
+    <a class="pill" data-umami-event="Clicked TikTok" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.tiktok.com/@ginacities" aria-label="TikTok">TikTok</a>
+    <a class="pill" data-umami-event="Clicked Instagram" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.instagram.com/ginacities/" aria-label="Instagram">Instagram</a>
+    <a class="pill" data-umami-event="Clicked Bluesky" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://bsky.app/profile/ginacities.com" aria-label="Bluesky">Bluesky</a>
+    <a class="pill" data-umami-event="Clicked YouTube" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.youtube.com/@ginacities" aria-label="YouTube">YouTube</a>
+    <a class="pill" data-umami-event="Clicked Threads" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://www.threads.com/@ginacities" aria-label="Threads">Threads</a>
+    <a class="pill" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Social Section" target="_blank" href="https://neocities.org/site/ginacities" aria-label="threads">Follow me on Neocities</a>
+    <a class="pill" data-umami-event="Clicked Email" data-umami-event-location="GinaCities Social Section" target="_blank" href="mailto:gina@ginacities.com" aria-label="email">gina@ginacities.com</a>
+  </div>
+</section>
+    </aside>
+
+    <main class="right">
+      
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/cd.png" alt="cd">
+    <span>My games</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+    This page is an overview of all my games, please <a data-umami-event="Clicked Itch.io" data-umami-event-location="GinaCities Games Page" target="_blank" href="https://ginacities.itch.io" aria-label="itch">follow me on Itch.io</a> to be notified of any new releases!
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/book.png" alt="book">
+    <span>Potion Puzzle Shop Leaderboard</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+    <div class="lb-tabs" id="lb-tabs">
+      <button class="pill" onclick="loadTab('easy',this)"><img src="/assets/icons/heart.png" class="nav-icon" alt="heart"> gentle</button>
+      <button class="pill active-tab" onclick="loadTab('medium',this)"><img src="/assets/icons/moon.png" class="nav-icon" alt="moon"> balanced</button>
+      <button class="pill " onclick="loadTab('hard',this)"><img src="/assets/icons/skull.png" class="nav-icon" alt="skull"> strong</button>
+    </div>
+    <div class="lb-body" id="lb-body">loading scores...</div>
+    <div class="lb-footer" id="lb-footer"></div>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/potion.png" alt="potion">
+    <span>Potion Puzzle Shop</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="game-scene">
+    <iframe frameborder="0"
+      src="https://itch.io/embed-upload/17039476?color=c2a580"
+      allowfullscreen="true"
+      style="border:0; width:100%; min-height:480px;">
+      <a href="https://ginacities.itch.io/potion-puzzle-shop">Play Potion Puzzle Shop on itch.io</a>
+    </iframe>
+    <div class="game-text content">
+      <p>Introducing my new game - Potion Puzzle Shop!</p>
+      <p>You've always made the most incredible teas that everyone says leaves them feeling fantastic, you wonder if you could ever use this wisdom to make magical potions as well...</p>
+      <p>You are running a magical shop, orders are coming in quickly for your magical recipes in the form of cards.</p>
+      <p><img src="https://img.itch.zone/aW1nLzI1ODkzODM3LnBuZw==/original/BVKhMB.png" loading="lazy" width="200"></p>
+      <p>In order to fulfil the request you need to check for the correct recipe in the magical spell book.</p>
+      <p>This will tell you what ingredients you need to brew this potion, follow the recipe, and clear all the cards.</p>
+      <p>If you get stuck, you may need to brew a special poison.</p>
+      <p>These use destructive magic, and can clear things in your way. But be careful, they will cost you.</p>
+      <p>Good luck dear mage, you will need it.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tama.png" alt="tamagotchi">
+    <span>Give a dog a home</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="game-scene">
+    <iframe src="https://itch.io/embed-upload/16751695" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>
+    <div class="game-text content">
+      <p>Adopt a doggy today!</p>
+      <p>This little pet doggy was my first game in Godot, it's a very simple ambient doggy that wanders around, sits down, sleeps and entertains itself.</p>
+      <p>The doggy will just happily live on your page, you can click on them for love, and their food and water can run out, you can click it to top it up, but no harm will ever come to them.</p>
+      <p>Select your own dog, then click on the cog for a code snippet you can add to your page.</p>
+      <p>I hope it brings you joy!</p>
+    </div>
+  </div>
+</section>
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/moon.png" alt="moon">
+    <span>A Little Christmas Market</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="game-scene">
+    <iframe src="https://itch.io/embed-upload/15742642?color=a0c6c7" width="500" height="500" style="border:0; aspect-ratio: 1 / 1;"></iframe>
+    <div class="game-text content">
+      <p>Welcome to A Little Christmas Market! What better way to feel Christmassy and special than to run your own snowy Christmas market with delightful wintery offerings.</p>
+      <p>Collect coins to purchase stalls with 12 stalls available for your Christmas market including an Almond stand, a Jewelery stand, Gingerbread, Pretzels and so much more! You can decide where the stalls go in your market, more stalls = more visitors! The higher value stalls give even more rewards. You may even get a furry visitor wandering around the market to see what the fuss is about.</p>
+      <p>Once the money starts coming in you might want to think about decorating your Christmas market with things from the item shop as well! </p>
+      <p>P.S This one works best on desktop </p>
+    </div>
+  </div>
+</section>
+<script src="/assets/js/leaderboard.js"></script>
+    </main>
+
+    <footer class="site">
+      <div id="badges" aria-label="88x31 button bar">
+        <a href="https://lovesick.cafe/grrrl" data-umami-event="Clicked Made by a girl" data-umami-event-location="GinaCities Footer Section" target="_blank"><img alt="Made by a girl" src="https://loves1ck.neocities.org/img/sozai/grrrl/madebya-04-1.png" loading="lazy" height="51" width="72"></a>
+        <a href="https://lemontchi.neocities.org" target="_blank" data-umami-event="Clicked Lemontchi" data-umami-event-location="GinaCities Footer Section"><img alt="lemontchi banner" src="https://lemontchi.neocities.org/lemontchibutton.gif" loading="lazy" height="31" width="88"></a>
+        <a href="https://neocities.org/site/ginacities" target="_blank" data-umami-event="Clicked Neocities" data-umami-event-location="GinaCities Footer Section"><img alt="neocities banner" src="/assets/banners/neocities.gif" loading="lazy" height="31" width="88"></a>
+        <a href="https://strawberry-transneu.neocities.org" target="_blank" data-umami-event="Clicked strawberry-transneu" data-umami-event-location="GinaCities Footer Section"><img src="https://strawberry-transneu.neocities.org/graphics/b_strw.png" loading="lazy" height="31" width="88"></a>
+        <a href="https://kuroi.com.br/" target="_blank" data-umami-event="Clicked Kuroi" data-umami-event-location="GinaCities Footer Section"><img src="/assets/banners/kuroi.png" alt="Kuroi banner" loading="lazy" height="31" width="88"></a>
+      </div>
+    </footer>
+  </div>
+
+
+  <script src="/assets/js/stars.js"></script>
+  <script src="/assets/js/marquee.js"></script>
+  <script src="/assets/js/darkmode.js"></script>
+  <script src="/assets/js/music.js"></script>
+  <script src="/assets/js/button-rain.js"></script>
+  <script data-goatcounter="https://ginacities.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

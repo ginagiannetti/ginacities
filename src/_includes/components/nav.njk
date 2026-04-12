@@ -1,0 +1,18 @@
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/alien.png" alt="alien">
+    <span>navigation</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+  <nav class="nav-grid-vertical" aria-label="site navigation">
+    <a class="pill {% if page.url == '/' %}nav-pill-active{% endif %}" href="/"><img src="/assets/icons/flower_smiley.png" class="nav-icon" alt="smiley flower"> home</a>
+    <a class="pill {% if page.url == '/about/' %}nav-pill-active{% endif %}" href="/about/"><img src="/assets/icons/glasses.png" class="nav-icon" alt="glasses"> about me</a>
+    <a class="pill {% if page.url == '/games/' %}nav-pill-active{% endif %}" href="/games/"><img src="/assets/icons/cd.png" class="nav-icon" alt="cd"> my games</a>
+    <a class="pill {% if page.url == '/videos/' %}nav-pill-active{% endif %}" href="/videos/"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> my videos</a>
+    <a class="pill {% if page.url == '/gallery/' %}nav-pill-active{% endif %}" href="/gallery/"><img src="/assets/icons/smiley.png" class="nav-icon" alt="smiley"> gallery</a>
+    <a class="pill {% if page.url == '/socials/' %}nav-pill-active{% endif %}" href="/socials/"><img src="/assets/icons/phone.png" class="nav-icon" alt="flip phone"> social</a>
+    <a class="pill {% if page.url == '/guestbook/' %}nav-pill-active{% endif %}" href="/guestbook/"><img src="/assets/icons/planet.png" class="nav-icon" alt="planet"> guestbook</a>
+  </nav>
+  </div>
+</section>

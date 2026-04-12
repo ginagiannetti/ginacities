@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: GinaCities — Gallery
+---
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tarot.png" alt="tarot cards">
+    <span>gallery</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="gallery-grid">
+      {% for item in gallery %}
+      <div class="gallery-item" onclick="openLightbox('{{ item.src }}', '{{ item.caption }}')">
+        <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy">
+        {% if item.caption %}
+        <div class="gallery-caption">{{ item.caption }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="pill lightbox-close" onclick="closeLightbox()">✕ close</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

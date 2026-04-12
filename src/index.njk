@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: GinaCities
+---
+
+<section id="home" class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/flower_smiley.png" alt="smiley flower">
+    <span>home</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="card">
+      <p>hello! welcome to my tiny pastel corner of the web. As you can probably tell, I really miss the early internet days of Geocities, MySpace, Neopets etc. I have tried to create that here, in my own small dedicated space. <img src="/assets/icons/planet.png" alt="planet"></p>
+      <p>Make yourself at home, and have a look around, I like making games, making videos and adding my personality onto everything, leave me a note in my guestbook and let me know what you think of the page. <img src="/assets/icons/bat.png" alt="bat"></p>
+    </div>
+  </div>
+</section>
+
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tama.png" alt="tamagotchi">
+    <span>My pet doggy</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="game-scene">
+    <iframe id="dogIframe" src="https://ginacities.com/doggy/?embed=1&dog=Corgi&variant=0&room=cute" width="324" height="324" style="border:0; aspect-ratio: 1 / 1;" allow="gamepad *"></iframe>
+    <div class="game-text content">
+      <p>This doggy is the very first game that I made, it was built in Godot and it's a very simple pet that wanders around and entertains itself.</p>
+      <p>The doggy will just happily live on your page, you can click on them for love, and their food and water can run out, you can click it to top it up, but no harm will ever come to them.</p>
+      <p>There are 5 rooms, 6 dogs and many colours to choose from. <a href="/games">Check out my games page</a> to adopt your own dog. </p>
+      <p>Let me know if you adopt a doggy and I'll add you to the rolling banners at the top!</p>
+    </div>
+  </div>
+</section>
