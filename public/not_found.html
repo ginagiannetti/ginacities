@@ -112,21 +112,35 @@
   function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
   function randomInt(max)  { return Math.floor(Math.random() * (max + 1)); }
 
+  function rollDog() {
+    const dog     = pickRandom(Object.keys(VARIANT_COUNTS));
+    const variant = randomInt((VARIANT_COUNTS[dog] ?? 1) - 1);
+    const room    = pickRandom(ROOMS);
+    return { dog, variant, room };
+  }
+
   function setDog(dog, variant, room) {
     const params = new URLSearchParams({ embed: '1', dog, variant, room });
     dogIframe.src = `https://ginacities.com/doggy/?${params}`;
     dogMeta.textContent = `You found a ${dog} in the ${room} room`;
   }
 
-  function rollDog() {
-    const dog     = pickRandom(Object.keys(VARIANT_COUNTS));
-    const variant = randomInt((VARIANT_COUNTS[dog] ?? 1) - 1);
-    const room    = pickRandom(ROOMS);
+  document.getElementById('randomDogBtn').addEventListener('click', () => {
+    const { dog, variant, room } = rollDog();
     setDog(dog, variant, room);
-  }
+  });
 
-  document.getElementById('randomDogBtn').addEventListener('click', rollDog);
-  rollDog();
+  dogIframe.src = '';
+  setTimeout(() => {
+    const parent = dogIframe.parentNode;
+    const placeholder = document.createElement('div');
+    parent.replaceChild(placeholder, dogIframe);
+    const { dog, variant, room } = rollDog();
+    const params = new URLSearchParams({ embed: '1', dog, variant, room });
+    dogIframe.src = `https://ginacities.com/doggy/?${params}`;
+    dogMeta.textContent = `You found a ${dog} in the ${room} room`;
+    parent.replaceChild(dogIframe, placeholder);
+  }, 50);
 })();
 </script>
   </div>
