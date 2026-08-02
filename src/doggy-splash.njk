@@ -1,0 +1,249 @@
+---
+layout: layouts/splash.njk
+permalink: /doggy-splash/index.html
+title: Doggy splash screen
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=648, initial-scale=1"
+  >
+
+  <title>{{ title }}</title>
+
+  {# Use the same font imports and stylesheet as your main site #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    html,
+    body {
+      width: 648px;
+      height: 648px;
+      min-width: 648px;
+      min-height: 648px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      background-image: var(--bg-url);
+      background-position: center;
+      color: var(--ink);
+    }
+
+    /*
+      Prevent the general site CRT overlay from making the exported
+      screenshot slightly unpredictable.
+    */
+    body::after {
+      position: absolute;
+    }
+
+    .splash-canvas {
+      position: relative;
+      width: 648px;
+      height: 648px;
+      padding: 42px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .splash-window {
+      width: 100%;
+      max-width: 550px;
+    }
+
+    .splash-window .titlebar {
+      min-height: 46px;
+      padding: 7px 9px;
+      font-size: 13px;
+    }
+
+    .splash-window .titlebar > img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+
+    .splash-window .content {
+      min-height: 430px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .doggy-icon {
+      width: 124px;
+      height: 124px;
+      margin-bottom: 24px;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+
+    .splash-heading {
+      margin: 0;
+      font-family: "Harnold Pixel", "Pixelify Sans", sans-serif;
+      font-size: 54px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: var(--title-text);
+      text-shadow: 3px 3px var(--lav-2);
+    }
+
+    .splash-status {
+      margin: 18px 0 0;
+      font-family: "Press Start 2P", cursive;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--dark);
+    }
+
+    .loading-track {
+      width: 330px;
+      height: 30px;
+      margin-top: 28px;
+      padding: 4px;
+      display: flex;
+      gap: 4px;
+      background: var(--white);
+
+      border-top: 3px solid var(--win-pink-dark);
+      border-left: 3px solid var(--win-pink-dark);
+      border-right: 3px solid var(--win-pink-light);
+      border-bottom: 3px solid var(--win-pink-light);
+    }
+
+    .loading-block {
+      flex: 1;
+      background: linear-gradient(
+        180deg,
+        var(--win-lav-light) 0%,
+        var(--win-lav) 60%,
+        var(--win-lav-dark) 100%
+      );
+    }
+
+    .loading-block:last-child {
+      opacity: 0.35;
+    }
+
+    .splash-credit {
+      margin: 26px 0 0;
+      font-size: 23px;
+      color: var(--title-text);
+    }
+
+    .splash-credit strong {
+      color: var(--title-text);
+      font-weight: 600;
+    }
+
+    .godot-credit {
+      margin: 10px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 20px;
+      color: var(--dark);
+    }
+
+    .godot-credit img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+
+    .loading-spacer{
+        height: 50px;
+    }
+
+    /*
+      These are decorative rather than functional, because this page
+      will be exported as a static image.
+    */
+    .splash-window .icons {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="splash-canvas" class="splash-canvas">
+    <section class="window splash-window">
+      <div class="titlebar">
+        <img
+          src="/assets/icons/tama.png"
+          alt=""
+        >
+
+        <span>doggy.exe</span>
+
+        {% include "components/window-buttons.njk" %}
+      </div>
+
+      <div class="content">
+        {#
+          Replace this with the dog sprite or icon you want to use.
+          A transparent PNG will work best.
+        #}
+        <img
+          class="doggy-icon"
+          src="/assets/icons/cd.png"
+          alt=""
+        >
+
+        <h1 class="splash-heading">Fetching doggy...</h1>
+
+        <p class="splash-status">
+          Preparing a tiny friend
+        </p>
+
+        {# <div class="loading-track" aria-hidden="true">
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+          <span class="loading-block"></span>
+        </div> #}
+
+        <p class="splash-credit">
+          created by <strong>@ginacities</strong>
+        </p>
+
+        <p class="godot-credit">
+          <img
+            src="/assets/icons/godot.png"
+            alt=""
+          >
+          <span>made with Godot</span>
+        </p>
+        <div class="loading-spacer"></div>
+      </div>
+      
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="crt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="{{ description or 'GinaCities' }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title or 'GinaCities' }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/AdobeStock_1668008849.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="209d67bd-268a-4c17-9a15-a01c26768d9b"></script>
+</head>
+<body class="link-body">
+
+  <div class="minimal-wrap">
+    {{ content | safe }}
+  </div>
+
+  <script src="/assets/js/stars.js"></script>
+  <script src="/assets/js/darkmode.js"></script>
+  <script src="/assets/js/button-rain.js"></script>
+</body>
+</html>
