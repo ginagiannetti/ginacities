@@ -42,31 +42,7 @@ title: GinaCities — Videos
     {% include "components/window-buttons.njk" %}
   </div>
   <div class="content">
-    <div class="video-grid">
-      <div class="video-item">
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/sCfOKttghTY?si=_qImFuwGhpbFIYlJ"
-            title="video title"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">Why do we crave the 2000s internet so much?</div>
-      </div>
-      <div class="video-item">
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/QYRHYpf8C5Q?si=BNnCOAV_tiESVb8R"
-            title="video title"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">Full devlog: Making Potion Puzzle Shop</div>
-      </div>
+    <div class="video-grid" id="long-video-container">
     </div>
   </div>
 </section>
@@ -78,48 +54,80 @@ title: GinaCities — Videos
     {% include "components/window-buttons.njk" %}
   </div>
   <div class="content">
-    <div class="video-grid video-grid--short">
-      {% for short in shorts %}
-      <div class="video-item">
-        <div class="video-wrap video-wrap--short">
-          <iframe
-            src="https://www.youtube.com/embed/{{ short.id }}"
-            title="{{ short.title }}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">{{ short.title }}</div>
-      </div>
-      {% endfor %}
+    <div class="video-grid video-grid--short" id="short-video-container">
     </div>
   </div>
 </section>
 
 <script>
-(() => {
-  document.querySelectorAll('.video-wrap--short').forEach(wrap => {
-    const iframe = wrap.querySelector('iframe');
-    if (!iframe) return;
+  async function loadVideos(){
+    try{
+      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws/');
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      const videos = await response.json();
+      const shortVideoContainer = document.getElementById('short-video-container');
+      const longVideoContainer = document.getElementById('long-video-container');
 
-    const src = iframe.src;
-    const videoId = src.match(/embed\/([^?]+)/)?.[1];
-    if (!videoId) return;
-
-    iframe.style.display = 'none';
-
-    const thumb = document.createElement('div');
-    thumb.className = 'video-thumb';
-    thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${videoId}/mqdefault.jpg)`;
-    thumb.innerHTML = '<div class="video-play-btn">&#9654;&#xFE0E;</div>';
-    wrap.appendChild(thumb);
-
-    thumb.addEventListener('click', () => {
-      iframe.src = src + '?autoplay=1';
-      iframe.style.display = '';
-      thumb.remove();
-    });
-  });
-})();
+      videos.forEach((video) => {
+        if(video.type === "long"){
+          let videoItem = document.createElement('div');
+          let videoWrap = document.createElement('div');
+          let iframe = document.createElement('iframe');
+          let caption = document.createElement('div');
+          iframe.setAttribute('src', `https://www.youtube.com/embed/${video.id}`);
+          iframe.setAttribute('title', video.title);
+          iframe.setAttribute(
+            'allow',
+            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          );
+          iframe.setAttribute('allowfullscreen', '');
+          videoItem.classList.add("video-item");
+          videoWrap.classList.add("video-wrap");
+          caption.classList.add("video-caption");
+          caption.textContent = video.title;
+          videoWrap.appendChild(iframe);
+          videoItem.appendChild(videoWrap);
+          videoItem.appendChild(caption);
+          longVideoContainer.appendChild(videoItem);
+        }
+        else if(video.type === "short"){
+          let videoItem = document.createElement('div');
+          let videoWrap = document.createElement('div');
+          let iframe = document.createElement('iframe');
+          let caption = document.createElement('div');
+          iframe.style.display = 'none';
+          iframe.setAttribute(
+            'allow',
+            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          );
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('title', video.title);
+          videoItem.className = 'video-item';
+          videoWrap.className = 'video-wrap';
+          videoWrap.classList.add("video-wrap--short")
+          caption.className = 'video-caption';
+          caption.textContent = video.title;
+          const thumb = document.createElement('div');
+          thumb.className = 'video-thumb';
+          thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${video.id}/mqdefault.jpg)`;
+          thumb.innerHTML = '<div class="video-play-btn">&#9654;&#xFE0E;</div>';
+          videoWrap.appendChild(thumb);
+          thumb.addEventListener('click', () => {
+            iframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+            iframe.style.display = '';
+            thumb.remove();
+          });
+          videoWrap.appendChild(iframe);
+          videoItem.appendChild(videoWrap);
+          videoItem.appendChild(caption);
+          shortVideoContainer.appendChild(videoItem);
+        }
+      })
+      } catch (error){
+        console.error('Error:', error);
+  }
+  }
+  loadVideos()
 </script>
