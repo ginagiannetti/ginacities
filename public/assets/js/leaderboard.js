@@ -38,7 +38,7 @@ async function loadTab(diff, btn) {
   body.innerHTML = '<p class="lb-message">loading scores...</p>';
   footer.textContent = '';
   try {
-    const res = await fetch(`https://api.ginacities.com/leaderboard/${diff}`);
+    const res = await fetch(`https://mupgzlppwd3z3qfxhxp7ahcmbi0nbmdp.lambda-url.eu-west-2.on.aws/leaderboard/${diff}`);
     const data = await res.json();
     _lbCache[diff] = data;
     body.innerHTML = _lbRender(data);
