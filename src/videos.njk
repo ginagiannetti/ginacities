@@ -71,7 +71,7 @@ title: GinaCities — Videos
       const longVideoContainer = document.getElementById('long-video-container');
 
       videos.forEach((video) => {
-        if(video.type === "long"){
+        if(video.type === "long" && video.published){
           let videoItem = document.createElement('div');
           let videoWrap = document.createElement('div');
           let iframe = document.createElement('iframe');
@@ -92,7 +92,7 @@ title: GinaCities — Videos
           videoItem.appendChild(caption);
           longVideoContainer.appendChild(videoItem);
         }
-        else if(video.type === "short"){
+        else if(video.type === "short" && video.published){
           let videoItem = document.createElement('div');
           let videoWrap = document.createElement('div');
           let iframe = document.createElement('iframe');
