@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: GinaCities — Blog
+---
+
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/tarot.png" alt="tarot cards">
+    <span>blog</span>
+    {% include "components/window-buttons.njk" %}
+  </div>
+  <div class="content">
+    <div class="gallery-grid">
+      {% for item in gallery %}
+      <div class="gallery-item" onclick="openLightbox('{{ item.src }}', '{{ item.caption }}')">
+        <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy">
+        {% if item.caption %}
+        <div class="gallery-caption">{{ item.caption }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

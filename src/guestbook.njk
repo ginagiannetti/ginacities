@@ -27,7 +27,42 @@ title: GinaCities — Guestbook
     <div class="card">
     <div class="guestbook-note">You can also post a message on <a href="https://neocities.org/site/ginacities" target="_blank">my neocities profile</a></div>
     <div class="guestbook-note">Let me know what you think of my page! If you've tried my games, watched any videos or any cool games you've played that you think I might like, whatever you fancy, just be nice. <img src="/assets/icons/heart.png" alt="heart"></div>
-    <iframe class="guestbook" src="https://users3.smartgb.com/g/g.php?a=s&i=g36-41014-af" title="GinaCities Guestbook" loading="lazy"></iframe>
+    {# <iframe class="guestbook" src="https://users3.smartgb.com/g/g.php?a=s&i=g36-41014-af" title="GinaCities Guestbook" loading="lazy"></iframe> #}
+    <header>Gina's Guestbook</header>
+    <section class="window">
+    <div class="titlebar">
+      <img src="/assets/icons/casette.png" alt="casette">
+      <span>Post a message</span>
+      {% include "components/window-buttons.njk" %}
+    </div>
+    <div class="content">
+      <div class="card">
+        form
+      
+      </div>
+    </div>
+  </section>
+
+  <div id="guestbook-container"></div>
     </div>
   </div>
 </section>
+
+<script>
+
+    async function loadGuestbook(){
+    try{
+      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws/');
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      const guestbook = await response.json();
+      const guestbookContainer = document.getElementById("guestbook-container")
+      guestbook.forEach((entry)=>{
+        
+      })
+      }
+      }
+
+      loadGuestbook()
+</script>

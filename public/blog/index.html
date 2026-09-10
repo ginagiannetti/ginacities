@@ -6,7 +6,7 @@
 <meta name="keywords" content="Game dev, Indie dev, Cute games">
 <meta name="author" content="Gina Giannetti">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>GinaCities — Guestbook</title>
+<title>GinaCities — Blog</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -101,7 +101,7 @@
     <a class="pill " href="/videos/"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> my videos</a>
     <a class="pill " href="/gallery/"><img src="/assets/icons/smiley.png" class="nav-icon" alt="smiley"> gallery</a>
     <a class="pill " href="/socials/"><img src="/assets/icons/phone.png" class="nav-icon" alt="flip phone"> social</a>
-    <a class="pill nav-pill-active" href="/guestbook/"><img src="/assets/icons/planet.png" class="nav-icon" alt="planet"> guestbook</a>
+    <a class="pill " href="/guestbook/"><img src="/assets/icons/planet.png" class="nav-icon" alt="planet"> guestbook</a>
   </nav>
   </div>
 </section>
@@ -231,24 +231,10 @@
 
     <main class="right">
       
-<style>
-.guestbook-note {
-  padding: 20px 0;
-  text-align: center;
-}
-
-.guestbook {
-  width: 100%;
-  min-height: 1000px;
-  border: none;
-  display: block;
-}
- </style>
-
 <section class="window">
   <div class="titlebar">
-    <img src="/assets/icons/casette.png" alt="casette">
-    <span>Guestbook</span>
+    <img src="/assets/icons/tarot.png" alt="tarot cards">
+    <span>blog</span>
     <div class="icons">
   <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
     <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
@@ -273,70 +259,403 @@
 </div>
   </div>
   <div class="content">
-    <div class="card">
-    <div class="guestbook-note">You can also post a message on <a href="https://neocities.org/site/ginacities" target="_blank">my neocities profile</a></div>
-    <div class="guestbook-note">Let me know what you think of my page! If you've tried my games, watched any videos or any cool games you've played that you think I might like, whatever you fancy, just be nice. <img src="/assets/icons/heart.png" alt="heart"></div>
-    
-    <header>Gina's Guestbook</header>
-    <section class="window">
-    <div class="titlebar">
-      <img src="/assets/icons/casette.png" alt="casette">
-      <span>Post a message</span>
-      <div class="icons">
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-  </svg>
-</div>
-    </div>
-    <div class="content">
-      <div class="card">
-        form
+    <div class="gallery-grid">
       
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/photo2.webp', 'honey')">
+        <img src="/assets/gallery/photo2.webp" alt="description of photo" loading="lazy">
+        
+        <div class="gallery-caption">honey</div>
+        
       </div>
-    </div>
-  </section>
-
-  <div id="guestbook-container"></div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_0012.webp', 'totoro crochet')">
+        <img src="/assets/gallery/IMG_0012.webp" alt="IMG_0012" loading="lazy">
+        
+        <div class="gallery-caption">totoro crochet</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_0104.webp', 'crochet rose')">
+        <img src="/assets/gallery/IMG_0104.webp" alt="IMG_0104" loading="lazy">
+        
+        <div class="gallery-caption">crochet rose</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_0360.webp', 'crochet with honey')">
+        <img src="/assets/gallery/IMG_0360.webp" alt="IMG_0360" loading="lazy">
+        
+        <div class="gallery-caption">crochet with honey</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_0670.webp', 'kyoto, japan')">
+        <img src="/assets/gallery/IMG_0670.webp" alt="IMG_0670" loading="lazy">
+        
+        <div class="gallery-caption">kyoto, japan</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_0888.webp', 'crochet blanket')">
+        <img src="/assets/gallery/IMG_0888.webp" alt="IMG_0888" loading="lazy">
+        
+        <div class="gallery-caption">crochet blanket</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1472.webp', 'me in my office')">
+        <img src="/assets/gallery/IMG_1472.webp" alt="IMG_1472" loading="lazy">
+        
+        <div class="gallery-caption">me in my office</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1508.webp', 'purple nails')">
+        <img src="/assets/gallery/IMG_1508.webp" alt="IMG_1508" loading="lazy">
+        
+        <div class="gallery-caption">purple nails</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1557.webp', 'ditto')">
+        <img src="/assets/gallery/IMG_1557.webp" alt="IMG_1557" loading="lazy">
+        
+        <div class="gallery-caption">ditto</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1792.webp', 'blanket in the works')">
+        <img src="/assets/gallery/IMG_1792.webp" alt="IMG_1792" loading="lazy">
+        
+        <div class="gallery-caption">blanket in the works</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1885.webp', 'my desk at night')">
+        <img src="/assets/gallery/IMG_1885.webp" alt="IMG_1885" loading="lazy">
+        
+        <div class="gallery-caption">my desk at night</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1914.webp', 'my desk in the day')">
+        <img src="/assets/gallery/IMG_1914.webp" alt="IMG_1914" loading="lazy">
+        
+        <div class="gallery-caption">my desk in the day</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1920.webp', 'desk bits')">
+        <img src="/assets/gallery/IMG_1920.webp" alt="IMG_1920" loading="lazy">
+        
+        <div class="gallery-caption">desk bits</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1923.webp', 'modded gbasp')">
+        <img src="/assets/gallery/IMG_1923.webp" alt="IMG_1923" loading="lazy">
+        
+        <div class="gallery-caption">modded gbasp</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1924.webp', 'modded steam deck')">
+        <img src="/assets/gallery/IMG_1924.webp" alt="IMG_1924" loading="lazy">
+        
+        <div class="gallery-caption">modded steam deck</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_1926.webp', 'game boy games')">
+        <img src="/assets/gallery/IMG_1926.webp" alt="IMG_1926" loading="lazy">
+        
+        <div class="gallery-caption">game boy games</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_2319.webp', 'glastonbury from the tower')">
+        <img src="/assets/gallery/IMG_2319.webp" alt="IMG_2319" loading="lazy">
+        
+        <div class="gallery-caption">glastonbury from the tower</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_3439.webp', 'crochet howl jacket')">
+        <img src="/assets/gallery/IMG_3439.webp" alt="IMG_3439" loading="lazy">
+        
+        <div class="gallery-caption">crochet howl jacket</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_3532.webp', 'crochet christmas cards')">
+        <img src="/assets/gallery/IMG_3532.webp" alt="IMG_3532" loading="lazy">
+        
+        <div class="gallery-caption">crochet christmas cards</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_3673.webp', 'christmas nails')">
+        <img src="/assets/gallery/IMG_3673.webp" alt="IMG_3673" loading="lazy">
+        
+        <div class="gallery-caption">christmas nails</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_3800.webp', 'crochet bag')">
+        <img src="/assets/gallery/IMG_3800.webp" alt="IMG_3800" loading="lazy">
+        
+        <div class="gallery-caption">crochet bag</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_5461.webp', 'at BBC news')">
+        <img src="/assets/gallery/IMG_5461.webp" alt="IMG_5461" loading="lazy">
+        
+        <div class="gallery-caption">at BBC news</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_5474.webp', 'in the studio')">
+        <img src="/assets/gallery/IMG_5474.webp" alt="IMG_5474" loading="lazy">
+        
+        <div class="gallery-caption">in the studio</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_5615.webp', 'Honey playing')">
+        <img src="/assets/gallery/IMG_5615.webp" alt="IMG_5615" loading="lazy">
+        
+        <div class="gallery-caption">Honey playing</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_5794.webp', 'pink gradient')">
+        <img src="/assets/gallery/IMG_5794.webp" alt="IMG_5794" loading="lazy">
+        
+        <div class="gallery-caption">pink gradient</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6183.webp', 'homemade card')">
+        <img src="/assets/gallery/IMG_6183.webp" alt="IMG_6183" loading="lazy">
+        
+        <div class="gallery-caption">homemade card</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6316.webp', 'from my garden')">
+        <img src="/assets/gallery/IMG_6316.webp" alt="IMG_6316" loading="lazy">
+        
+        <div class="gallery-caption">from my garden</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6357.webp', 'garden @ glastonbury')">
+        <img src="/assets/gallery/IMG_6357.webp" alt="IMG_6357" loading="lazy">
+        
+        <div class="gallery-caption">garden @ glastonbury</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6539.webp', 'crochet skull jacket')">
+        <img src="/assets/gallery/IMG_6539.webp" alt="IMG_6539" loading="lazy">
+        
+        <div class="gallery-caption">crochet skull jacket</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6605.webp', 'bug')">
+        <img src="/assets/gallery/IMG_6605.webp" alt="IMG_6605" loading="lazy">
+        
+        <div class="gallery-caption">bug</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_6901.webp', 'girls shopping day')">
+        <img src="/assets/gallery/IMG_6901.webp" alt="IMG_6901" loading="lazy">
+        
+        <div class="gallery-caption">girls shopping day</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7070.webp', 'my office feat balloons')">
+        <img src="/assets/gallery/IMG_7070.webp" alt="IMG_7070" loading="lazy">
+        
+        <div class="gallery-caption">my office feat balloons</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7132.webp', 'me and honey')">
+        <img src="/assets/gallery/IMG_7132.webp" alt="IMG_7132" loading="lazy">
+        
+        <div class="gallery-caption">me and honey</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7143.webp', 'me')">
+        <img src="/assets/gallery/IMG_7143.webp" alt="IMG_7143" loading="lazy">
+        
+        <div class="gallery-caption">me</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7173.webp', 'me and my dad')">
+        <img src="/assets/gallery/IMG_7173.webp" alt="IMG_7173" loading="lazy">
+        
+        <div class="gallery-caption">me and my dad</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7355.webp', 'crochet flower crown')">
+        <img src="/assets/gallery/IMG_7355.webp" alt="IMG_7355" loading="lazy">
+        
+        <div class="gallery-caption">crochet flower crown</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7531.webp', 'magikarp art')">
+        <img src="/assets/gallery/IMG_7531.webp" alt="IMG_7531" loading="lazy">
+        
+        <div class="gallery-caption">magikarp art</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7545.webp', 'flower mirror')">
+        <img src="/assets/gallery/IMG_7545.webp" alt="IMG_7545" loading="lazy">
+        
+        <div class="gallery-caption">flower mirror</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7666.webp', 'Stardew in concert')">
+        <img src="/assets/gallery/IMG_7666.webp" alt="IMG_7666" loading="lazy">
+        
+        <div class="gallery-caption">Stardew in concert</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7800.webp', 'crochet flowers')">
+        <img src="/assets/gallery/IMG_7800.webp" alt="IMG_7800" loading="lazy">
+        
+        <div class="gallery-caption">crochet flowers</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7894.webp', 'honey')">
+        <img src="/assets/gallery/IMG_7894.webp" alt="IMG_7894" loading="lazy">
+        
+        <div class="gallery-caption">honey</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7921.webp', 'my sunflowers')">
+        <img src="/assets/gallery/IMG_7921.webp" alt="IMG_7921" loading="lazy">
+        
+        <div class="gallery-caption">my sunflowers</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7926.webp', 'my desk')">
+        <img src="/assets/gallery/IMG_7926.webp" alt="IMG_7926" loading="lazy">
+        
+        <div class="gallery-caption">my desk</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_7933.webp', 'waistcoat sewing practice')">
+        <img src="/assets/gallery/IMG_7933.webp" alt="IMG_7933" loading="lazy">
+        
+        <div class="gallery-caption">waistcoat sewing practice</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8112.webp', 'sewing practice')">
+        <img src="/assets/gallery/IMG_8112.webp" alt="IMG_8112" loading="lazy">
+        
+        <div class="gallery-caption">sewing practice</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8160.webp', 'honey in her tiny bed')">
+        <img src="/assets/gallery/IMG_8160.webp" alt="IMG_8160" loading="lazy">
+        
+        <div class="gallery-caption">honey in her tiny bed</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8183.webp', 'complete sewing outfit')">
+        <img src="/assets/gallery/IMG_8183.webp" alt="IMG_8183" loading="lazy">
+        
+        <div class="gallery-caption">complete sewing outfit</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8437.webp', 'office grandma wall')">
+        <img src="/assets/gallery/IMG_8437.webp" alt="IMG_8437" loading="lazy">
+        
+        <div class="gallery-caption">office grandma wall</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8440.webp', 'halloween nails')">
+        <img src="/assets/gallery/IMG_8440.webp" alt="IMG_8440" loading="lazy">
+        
+        <div class="gallery-caption">halloween nails</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8623.webp', 'my christmas game')">
+        <img src="/assets/gallery/IMG_8623.webp" alt="IMG_8623" loading="lazy">
+        
+        <div class="gallery-caption">my christmas game</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8675.webp', 'red nails')">
+        <img src="/assets/gallery/IMG_8675.webp" alt="IMG_8675" loading="lazy">
+        
+        <div class="gallery-caption">red nails</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8715.webp', 'hand drawn card')">
+        <img src="/assets/gallery/IMG_8715.webp" alt="IMG_8715" loading="lazy">
+        
+        <div class="gallery-caption">hand drawn card</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_8811.webp', 'sleepy dog')">
+        <img src="/assets/gallery/IMG_8811.webp" alt="IMG_8811" loading="lazy">
+        
+        <div class="gallery-caption">sleepy dog</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_9046.webp', 'bright christmas nails')">
+        <img src="/assets/gallery/IMG_9046.webp" alt="IMG_9046" loading="lazy">
+        
+        <div class="gallery-caption">bright christmas nails</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_9603.webp', 'desk dog')">
+        <img src="/assets/gallery/IMG_9603.webp" alt="IMG_9603" loading="lazy">
+        
+        <div class="gallery-caption">desk dog</div>
+        
+      </div>
+      
+      <div class="gallery-item" onclick="openLightbox('/assets/gallery/IMG_9653.webp', 'me @ christmas')">
+        <img src="/assets/gallery/IMG_9653.webp" alt="IMG_9653" loading="lazy">
+        
+        <div class="gallery-caption">me @ christmas</div>
+        
+      </div>
+      
     </div>
   </div>
 </section>
-
-<script>
-
-    async function loadGuestbook(){
-    try{
-      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws/');
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-      }
-      const guestbook = await response.json();
-      const guestbookContainer = document.getElementById("guestbook-container")
-      guestbook.forEach((entry)=>{
-        
-      })
-      }
-      }
-
-      loadGuestbook()
-</script>
-
     </main>
 
     <footer class="site">
