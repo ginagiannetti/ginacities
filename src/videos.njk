@@ -43,6 +43,15 @@ title: GinaCities — Videos
   </div>
   <div class="content">
     <div class="video-grid" id="long-video-container">
+      <div class="video-item video-placeholder">
+      <div class="video-wrap placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
+  </div>
+
+    <div class="video-item video-placeholder">
+      <div class="video-wrap placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
+    </div>
     </div>
   </div>
 </section>
@@ -55,7 +64,25 @@ title: GinaCities — Videos
   </div>
   <div class="content">
     <div class="video-grid video-grid--short" id="short-video-container">
+      <div class="video-item video-placeholder">
+      <div class="video-wrap video-wrap--short placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
     </div>
+
+    <div class="video-item video-placeholder">
+      <div class="video-wrap video-wrap--short placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
+    </div>
+
+    <div class="video-item video-placeholder">
+      <div class="video-wrap video-wrap--short placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
+    </div>
+    <div class="video-item video-placeholder">
+      <div class="video-wrap video-wrap--short placeholder-box"></div>
+      <div class="video-caption placeholder-caption"></div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -69,6 +96,14 @@ title: GinaCities — Videos
       const videos = await response.json();
       const shortVideoContainer = document.getElementById('short-video-container');
       const longVideoContainer = document.getElementById('long-video-container');
+
+      longVideoContainer
+        .querySelectorAll('.video-placeholder')
+        .forEach((placeholder) => placeholder.remove());
+
+      shortVideoContainer
+        .querySelectorAll('.video-placeholder')
+        .forEach((placeholder) => placeholder.remove());
 
       videos.forEach((video) => {
         if(video.type === "long" && video.published){

@@ -462,6 +462,45 @@ dd{
   margin-bottom: 12px;
 }
 
+/*videos*/
+.video-placeholder {
+  pointer-events: none;
+}
+
+.placeholder-box,
+.placeholder-caption {
+  background: var(--win-lav-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-caption {
+  height: 20px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.placeholder-box::after,
+.placeholder-caption::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: placeholder-shimmer 1.4s infinite;
+}
+
+@keyframes placeholder-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /*404*/
 .not-found{
   display: flex; 
