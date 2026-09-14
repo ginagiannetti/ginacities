@@ -501,6 +501,16 @@ dd{
   }
 }
 
+.load-more{
+  margin: 25px 0 10px 0;
+}
+
+#load-more-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /*404*/
 .not-found{
   display: flex; 
@@ -811,6 +821,7 @@ dd{
   border-top: 2px solid var(--violet);
   font-family: "Press Start 2P", cursive;
   color: var(--dark);
+  line-height: 1.4;
 }
 
 /* Links page */

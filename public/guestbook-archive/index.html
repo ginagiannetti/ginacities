@@ -6,7 +6,7 @@
 <meta name="keywords" content="Game dev, Indie dev, Cute games">
 <meta name="author" content="Gina Giannetti">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>GinaCities — Videos</title>
+<title>GinaCities — Guestbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -98,7 +98,7 @@
     <a class="pill " href="/"><img src="/assets/icons/flower_smiley.png" class="nav-icon" alt="smiley flower"> home</a>
     <a class="pill " href="/about/"><img src="/assets/icons/glasses.png" class="nav-icon" alt="glasses"> about me</a>
     <a class="pill " href="/games/"><img src="/assets/icons/cd.png" class="nav-icon" alt="cd"> my games</a>
-    <a class="pill nav-pill-active" href="/videos/"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> my videos</a>
+    <a class="pill " href="/videos/"><img src="/assets/icons/tarot.png" class="nav-icon" alt="tarot cards"> my videos</a>
     <a class="pill " href="/gallery/"><img src="/assets/icons/smiley.png" class="nav-icon" alt="smiley"> gallery</a>
     <a class="pill " href="/socials/"><img src="/assets/icons/phone.png" class="nav-icon" alt="flip phone"> social</a>
     <a class="pill " href="/guestbook/"><img src="/assets/icons/planet.png" class="nav-icon" alt="planet"> guestbook</a>
@@ -230,214 +230,56 @@
     </aside>
 
     <main class="right">
-      <style>
-  .video-thumb {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-play-btn {
-  width: 56px;
-  height: 56px;
-  background: var(--win-lav);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: var(--dark);
-  border: 3px solid var(--win-lav-light);
-  box-shadow: 3px 3px 0 0 var(--win-pink-dark);
-  transition: transform .12s ease;
-}
-
-.video-thumb:hover .video-play-btn {
-  transform: translate(-2px, -2px);
-}
-</style>
-
-
-<section class="window">
-  <div class="titlebar">
-    <img src="/assets/icons/hat.png" alt="witch's hat">
-    <span>youtube</span>
-    <div class="icons">
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-  </svg>
-</div>
-  </div>
-  <div class="content">
-    <div class="video-grid" id="long-video-container">
-      <div class="video-item video-placeholder">
-        <div class="video-wrap placeholder-box"></div>
-        <div class="video-caption placeholder-caption"></div>
-      </div>
-
-      <div class="video-item video-placeholder">
-        <div class="video-wrap placeholder-box"></div>
-        <div class="video-caption placeholder-caption"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="window">
-  <div class="titlebar">
-    <img src="/assets/icons/tarot.png" alt="tarot cards">
-    <span>shorts</span>
-    <div class="icons">
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
-    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
-  </svg>
-  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
-    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
-    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
-    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
-    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
-  </svg>
-</div>
-  </div>
-  <div class="content">
-    <div class="video-grid video-grid--short" id="short-video-container">
-      <div class="video-item video-placeholder">
-      <div class="video-wrap video-wrap--short placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-    </div>
-
-    <div class="video-item video-placeholder">
-      <div class="video-wrap video-wrap--short placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-    </div>
-
-    <div class="video-item video-placeholder">
-      <div class="video-wrap video-wrap--short placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-    </div>
-    <div class="video-item video-placeholder">
-      <div class="video-wrap video-wrap--short placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-    </div>
-  </div>
-   <div id="load-more-container"> 
-    <button onclick="loadVideos('short', false)" class="pill load-more">Load more</button>
-  </div>
-  </div>
-</section>
-
-<script>
-  const cursors = {
-    long: null,
-    short: null
-  }
-  async function loadVideos(type, firstUsage){
-    try{
-      let cursorText = cursors[type] ? ('&cursor=' + cursors[type]) : ""
-      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws?type=' + type + '&limit=' + 20 + cursorText);
       
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-      }
+<style>
+.guestbook-note {
+  padding: 20px 0;
+  text-align: center;
+}
 
-      const videos = await response.json();
-      const videoContainer = document.getElementById(type + '-video-container');
+.guestbook {
+  width: 100%;
+  min-height: 1000px;
+  border: none;
+  display: block;
+}
+ </style>
 
-      cursors[type] = videos.nextCursor
-
-      if(firstUsage){
-        videoContainer
-          .querySelectorAll('.video-placeholder')
-          .forEach((placeholder) => placeholder.remove());
-      }
-      else if(!cursors[type]){
-        const loadMore = document.getElementById('load-more-container')
-        loadMore.style.display = 'none'
-      }
-
-      videos.items.forEach((video) => {
-        if(video.published){
-          let videoItem = document.createElement('div');
-          let videoWrap = document.createElement('div');
-          let iframe = document.createElement('iframe');
-          let caption = document.createElement('div');
-          iframe.setAttribute('title', video.title);
-          iframe.setAttribute(
-            'allow',
-            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          );
-          iframe.setAttribute('allowfullscreen', '');
-          videoItem.className = 'video-item';
-          videoWrap.className = 'video-wrap';
-          caption.textContent = video.title;
-          videoWrap.appendChild(iframe);
-          videoItem.appendChild(videoWrap);
-          videoItem.appendChild(caption);
-          videoContainer.appendChild(videoItem);
-
-          if(type === "long"){
-            iframe.setAttribute('src', `https://www.youtube.com/embed/${video.id}`);
-            caption.classList.add("video-caption");
-          }
-
-          else if(type === "short"){
-            iframe.style.display = 'none';     
-            videoWrap.classList.add("video-wrap--short")
-            caption.className = 'video-caption';     
-            const thumb = document.createElement('div');
-            thumb.className = 'video-thumb';
-            thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${video.id}/mqdefault.jpg)`;
-            thumb.innerHTML = '<div class="video-play-btn">&#9654;&#xFE0E;</div>';
-            videoWrap.appendChild(thumb);
-            thumb.addEventListener('click', () => {
-              iframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
-              iframe.style.display = '';
-              thumb.remove();
-            });
-          }
-        }
-      })
-      } catch (error){
-        console.error('Error:', error);
-    }
-  }
-
-  loadVideos('long', true);
-  loadVideos('short', true);
-</script>
+<section class="window">
+  <div class="titlebar">
+    <img src="/assets/icons/casette.png" alt="casette">
+    <span>Guestbook</span>
+    <div class="icons">
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="22" x2="26" y2="22" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <rect x="9" y="9" width="18" height="14" fill="none" stroke="#9b3c6a" stroke-width="2" stroke-linecap="square"/>
+    <line x1="9" y1="12" x2="27" y2="12" stroke="#9b3c6a" stroke-width="3" stroke-linecap="square"/>
+  </svg>
+  <svg width="20" height="18" viewBox="0 0 36 32" aria-hidden="true">
+    <rect x="0" y="0" width="36" height="32" fill="#d97fa3"/>
+    <rect x="0" y="0" width="34" height="30" fill="#fff5f9"/>
+    <rect x="2" y="2" width="32" height="28" fill="#fce4ef"/>
+    <line x1="10" y1="9" x2="26" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+    <line x1="26" y1="9" x2="10" y2="23" stroke="#c0436a" stroke-width="2.5" stroke-linecap="square"/>
+  </svg>
+</div>
+  </div>
+  <div class="content">
+    <div class="card">
+    <div class="guestbook-note">You can also post a message on <a href="https://neocities.org/site/ginacities" target="_blank">my neocities profile</a></div>
+    <div class="guestbook-note">Let me know what you think of my page! If you've tried my games, watched any videos or any cool games you've played that you think I might like, whatever you fancy, just be nice. <img src="/assets/icons/heart.png" alt="heart"></div>
+    <iframe class="guestbook" src="https://users3.smartgb.com/g/g.php?a=s&i=g36-41014-af" title="GinaCities Guestbook" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
     </main>
 
     <footer class="site">

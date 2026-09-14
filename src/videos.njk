@@ -44,14 +44,14 @@ title: GinaCities — Videos
   <div class="content">
     <div class="video-grid" id="long-video-container">
       <div class="video-item video-placeholder">
-      <div class="video-wrap placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-  </div>
+        <div class="video-wrap placeholder-box"></div>
+        <div class="video-caption placeholder-caption"></div>
+      </div>
 
-    <div class="video-item video-placeholder">
-      <div class="video-wrap placeholder-box"></div>
-      <div class="video-caption placeholder-caption"></div>
-    </div>
+      <div class="video-item video-placeholder">
+        <div class="video-wrap placeholder-box"></div>
+        <div class="video-caption placeholder-caption"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -83,86 +83,88 @@ title: GinaCities — Videos
       <div class="video-caption placeholder-caption"></div>
     </div>
   </div>
+   <div id="load-more-container"> 
+    <button onclick="loadVideos('short', false)" class="pill load-more">Load more</button>
+  </div>
   </div>
 </section>
 
 <script>
-  async function loadVideos(){
+  const cursors = {
+    long: null,
+    short: null
+  }
+  async function loadVideos(type, firstUsage){
     try{
-      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws/');
+      let cursorText = cursors[type] ? ('&cursor=' + cursors[type]) : ""
+      const response = await fetch('https://22xcto36m3firhfmgcwvoucefy0vzntn.lambda-url.eu-west-2.on.aws?type=' + type + '&limit=' + 20 + cursorText);
+      
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
+
       const videos = await response.json();
-      const shortVideoContainer = document.getElementById('short-video-container');
-      const longVideoContainer = document.getElementById('long-video-container');
+      const videoContainer = document.getElementById(type + '-video-container');
 
-      longVideoContainer
-        .querySelectorAll('.video-placeholder')
-        .forEach((placeholder) => placeholder.remove());
+      cursors[type] = videos.nextCursor
 
-      shortVideoContainer
-        .querySelectorAll('.video-placeholder')
-        .forEach((placeholder) => placeholder.remove());
+      if(firstUsage){
+        videoContainer
+          .querySelectorAll('.video-placeholder')
+          .forEach((placeholder) => placeholder.remove());
+      }
+      else if(!cursors[type]){
+        const loadMore = document.getElementById('load-more-container')
+        loadMore.style.display = 'none'
+      }
 
-      videos.forEach((video) => {
-        if(video.type === "long" && video.published){
+      videos.items.forEach((video) => {
+        if(video.published){
           let videoItem = document.createElement('div');
           let videoWrap = document.createElement('div');
           let iframe = document.createElement('iframe');
           let caption = document.createElement('div');
-          iframe.setAttribute('src', `https://www.youtube.com/embed/${video.id}`);
           iframe.setAttribute('title', video.title);
           iframe.setAttribute(
             'allow',
             'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           );
           iframe.setAttribute('allowfullscreen', '');
-          videoItem.classList.add("video-item");
-          videoWrap.classList.add("video-wrap");
-          caption.classList.add("video-caption");
-          caption.textContent = video.title;
-          videoWrap.appendChild(iframe);
-          videoItem.appendChild(videoWrap);
-          videoItem.appendChild(caption);
-          longVideoContainer.appendChild(videoItem);
-        }
-        else if(video.type === "short" && video.published){
-          let videoItem = document.createElement('div');
-          let videoWrap = document.createElement('div');
-          let iframe = document.createElement('iframe');
-          let caption = document.createElement('div');
-          iframe.style.display = 'none';
-          iframe.setAttribute(
-            'allow',
-            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          );
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.setAttribute('title', video.title);
           videoItem.className = 'video-item';
           videoWrap.className = 'video-wrap';
-          videoWrap.classList.add("video-wrap--short")
-          caption.className = 'video-caption';
           caption.textContent = video.title;
-          const thumb = document.createElement('div');
-          thumb.className = 'video-thumb';
-          thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${video.id}/mqdefault.jpg)`;
-          thumb.innerHTML = '<div class="video-play-btn">&#9654;&#xFE0E;</div>';
-          videoWrap.appendChild(thumb);
-          thumb.addEventListener('click', () => {
-            iframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
-            iframe.style.display = '';
-            thumb.remove();
-          });
           videoWrap.appendChild(iframe);
           videoItem.appendChild(videoWrap);
           videoItem.appendChild(caption);
-          shortVideoContainer.appendChild(videoItem);
+          videoContainer.appendChild(videoItem);
+
+          if(type === "long"){
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${video.id}`);
+            caption.classList.add("video-caption");
+          }
+
+          else if(type === "short"){
+            iframe.style.display = 'none';     
+            videoWrap.classList.add("video-wrap--short")
+            caption.className = 'video-caption';     
+            const thumb = document.createElement('div');
+            thumb.className = 'video-thumb';
+            thumb.style.backgroundImage = `url(https://img.youtube.com/vi/${video.id}/mqdefault.jpg)`;
+            thumb.innerHTML = '<div class="video-play-btn">&#9654;&#xFE0E;</div>';
+            videoWrap.appendChild(thumb);
+            thumb.addEventListener('click', () => {
+              iframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+              iframe.style.display = '';
+              thumb.remove();
+            });
+          }
         }
       })
       } catch (error){
         console.error('Error:', error);
+    }
   }
-  }
-  loadVideos()
+
+  loadVideos('long', true);
+  loadVideos('short', true);
 </script>
